@@ -1,0 +1,126 @@
+---
+title: Index page,
+class: 'catalog'
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	<div class="breadcrumbs">
+		<a href="">WOMEN</a>
+		<span>Clothing</span>		
+	</div>
+
+	<h2>Women’s Clothing</h2>
+
+	{% set filters = [
+		{
+			title: 'BRANDS',
+			target: 'brands'
+		},
+		{
+			title: 'SIZE',
+			target: 'size'
+		},
+		{
+			title: 'CATEGORY',
+			target: 'category'
+		}		
+	] %}
+
+	<div class="catalog__filter">
+		<div class="mobile--title">
+			<span>FILTERS</span>
+			{{mixins.icon('icon_arrow_menu')}}
+		</div>
+		<ul class="catalog__filter_nav">
+			{% for i in filters %}
+			<li data-target="{{i.target}}">				
+				<span>{{i.title}}</span>
+				<i></i>
+			</li>
+			{% endfor %}
+		</ul>
+
+		<div class="catalog__filter_list">
+			{% for i in filters %}
+				<section class="list--item" id="{{i.target}}">
+					<ul>
+						<li>
+							<label class="custom-checkbox">
+								<input type="checkbox">
+								<span>GUCCI</span>
+							</label>
+						</li>
+						<li>
+							<label class="custom-checkbox">
+								<input type="checkbox">
+								<span>Dolce & Gabana</span>
+							</label>
+						</li>
+						<li>
+							<label class="custom-checkbox">
+								<input type="checkbox">
+								<span>PRADA</span>
+							</label>
+						</li>
+						<li>
+							<label class="custom-checkbox">
+								<input type="checkbox">
+								<span>Louis Vuitton</span>
+							</label>
+						</li>
+						<li>
+							<label class="custom-checkbox">
+								<input type="checkbox">
+								<span>Hermes</span>
+							</label>
+						</li>
+						<li>
+							<label class="custom-checkbox">
+								<input type="checkbox">
+								<span>CHANEL</span>
+							</label>
+						</li>
+					</ul>
+				</section>
+			{% endfor %}
+		</div>
+	</div>
+
+	<article class="catalog__list">
+		{% for i in range(0, 9) %}
+		<section class="card">
+			<div class="card--photo">
+				<a href="">
+					<img src="./img/product-1.jpg" alt="">
+				</a>
+			</div>
+			<h5>
+				<a href="">Heritage Sea Storm print jacket GUCCI</a>
+				<a href="" class="favorites">
+					<img src="./img/icon_wish.svg" alt="">
+					<img src="./img/icon_wish_fill.svg" class="hover" alt="">
+				</a>
+			</h5>
+			<div class="card--price">15 600 uaH</div>
+		</section>
+		{% endfor %}
+	</article>
+
+
+	<div class="pagination">
+		<a href="" class="pagination__prev"></a>
+		<div class="pagination__list">
+			<a href="" class="current">1</a>
+			<a href="">2</a>
+			<a href="">3</a>
+			<a href="">4</a>
+			<span></span>
+			<a href="">10</a>
+		</div>
+		<a href="" class="pagination__next"></a>
+	</div>
+	
+	
+{% endblock %}

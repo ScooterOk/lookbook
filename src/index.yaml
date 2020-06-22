@@ -2,6 +2,13 @@ ProjectTitle: lookbook
 
 PageList:
 - file: homepage.html
+  ready: 90
+- file: card-product.html
+  ready: 90
+- file: womens-сlothing.html
   ready: 10
+
+  
+  
 
   

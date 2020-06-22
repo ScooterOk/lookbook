@@ -1,0 +1,160 @@
+---
+title: Index page,
+class: 'card'
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	<div class="breadcrumbs">
+		<a href="">WOMEN</a>
+		<a href="">Clothing</a>
+		<span>JACKET LOUIS VUITTON</span>
+	</div>
+
+	<h2>Jacket LOUIS VUITTON</h2>
+	<article class="card__article">		
+		<a href="" class="favorites">
+			<!-- if favorites active, add class "active" -->
+			<img src="./img/icon_wish.svg" alt="">
+			<img src="./img/icon_wish_fill.svg" class="hover" alt="">
+		</a>
+		<section class="card__article_photo">
+			<ul>
+				<li>
+					<img src="./img/jacket-1.jpg" alt="">
+				</li>
+				<li>
+					<img src="./img/jacket-2.jpg" alt="">
+				</li>
+				<li>
+					<img src="./img/jacket-1.jpg" alt="">
+				</li>
+			</ul>
+		</section>
+		<section class="card__article_details">
+			<div class="article">#934156</div>
+			<div class="price">
+				<b>2 000</b>
+				<span>usd</span>				 
+			</div>
+			<div class="description">
+				<a href="" data-link="description">DESCRIPTION</a>
+			</div>
+			<div class="size">
+				<span>Size:</span>
+				<label class="size-radio">
+					<input type="radio" name="size">
+					<span>S</span>
+				</label>
+				<label class="size-radio">
+					<input type="radio" name="size">
+					<span>M</span>
+				</label>
+				<label class="size-radio">
+					<input type="radio" name="size">
+					<span>L</span>
+				</label>
+				<label class="size-radio">
+					<input type="radio" name="size">
+					<span>XL</span>
+				</label>
+			</div>
+			<div class="buy">
+				<button class="btn">
+					<span>BUY</span>
+				</button>
+			</div>
+			<div class="question">
+				<span>ASK A QUESTION:</span>
+				<a href="">
+					<img src="./img/card_viber.svg" alt="">
+				</a>
+				<a href="">
+					<img src="./img/card_whatsapp.svg" alt="">
+				</a>
+				<a href="">
+					<img src="./img/card_telegram.svg" alt="">
+				</a>				
+			</div>
+			<div class="phone">
+				<a href="tel:+380669565585">+38(066)9565585</a>
+			</div>
+		</section>
+	</article>
+
+	<article class="card__description">
+		<h2>Description</h2>
+		<div class="description--details">
+			<p>This vegan leather shirt dress provides a bold style with its three-quarter sleeves and straight fit. This vegan leather shirt dress provides a bold style with its three-quarter sleeves and straight fit.</p>
+			<p></p>
+			<p>Base: 85% viscose, 15% polyester</p>
+		</div>
+	</article>
+
+	<article class="slider card">
+		<h2>Recently Viewed</h2>
+		<!-- Slider main container -->
+		<div class="swiper-container">
+			<!-- Additional required wrapper -->
+			<div class="swiper-wrapper">
+
+				{% set slider = [
+					{
+						img: 'jacket-1.jpg'
+					},
+					{
+						img: 'product-1.jpg'
+					},
+					{
+						img: 'jacket-2.jpg'
+					},
+					{
+						img: 'jacket-1.jpg'
+					},
+					{
+						img: 'product-1.jpg'
+					},
+					{
+						img: 'jacket-2.jpg'
+					},
+					{
+						img: 'jacket-1.jpg'
+					},
+					{
+						img: 'product-1.jpg'
+					},
+					{
+						img: 'jacket-2.jpg'
+					}					
+				] %}
+
+				{% for slide in slider %}
+
+					<div class="swiper-slide">
+						<div class="slide__photo">
+							<a href="">
+								<img src="./img/{{slide.img}}" alt="">
+							</a>
+						</div>						
+						<h5>
+							<a href="">Heritage Sea Storm print jacket GUCCI</a>
+							<a href="" class="favorites{% if loop.index == 3 %} active{% endif %}">
+								<img src="./img/icon_wish.svg" alt="">
+								<img src="./img/icon_wish_fill.svg" class="hover" alt="">
+							</a>
+						</h5>
+						<div class="price">15 600 uaH</div>
+					</div>
+					{% endfor %}
+			</div>
+			<!-- If we need pagination -->
+			<div class="swiper-pagination"></div>
+
+			<!-- If we need navigation buttons -->
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-button-next"></div>			
+		</div>
+	</article>
+	
+{% endblock %}

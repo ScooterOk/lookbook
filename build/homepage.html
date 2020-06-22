@@ -4,12 +4,14 @@
     <meta charset="utf-8" />
     <title>Index page,</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0" />
     <meta name="theme-color" content="#fff" />
     <meta name="format-detection" content="telephone=no" />
     <link rel="stylesheet" media="all" href="css/app.css" />
   </head>
   <body>
+    <div id="loader"></div>
+    <div id="gotop"></div>
     <!-- HEADER -->
     <header>
       <div class="header__wrapper">
@@ -114,13 +116,20 @@
             </div>
           </div>
         </section>
-        <a href="" class="header__logo">Lookbook</a>
+        <a href="./" class="header__logo">Lookbook</a>
         <section class="header__options">
           <div class="search">
             <button class="icon icon-search" data-action="toggleSearch">
               <img src="./img/icon_search.svg" alt="">
               <img src="./img/icon_search_fill.svg" class="hover" alt="">
             </button>
+            <section class="search__from">
+              <button class="close" id="header-close-form"></button>
+              <form action="">
+                <input type="text" id="header-search-input" placeholder="Search" autocomplete="off">
+                <button type="submit" id="header-search-submit">Search</button>
+              </form>
+            </section>
           </div>
           <a href="" class="icon">
             <img src="./img/icon_account.svg" alt="">
@@ -130,10 +139,53 @@
             <img src="./img/icon_wish.svg" alt="">
             <img src="./img/icon_wish_fill.svg" class="hover" alt="">
           </a>
-          <a href="" class="icon">
-            <img src="./img/icon_bascket.svg" alt="">
-            <img src="./img/icon_bascket_fill.svg" class="hover" alt="">
-          </a>
+          <div class="cart" data-action="toggleCart">
+            <a href="" class="icon">
+              <img src="./img/icon_bascket.svg" alt="">
+              <img src="./img/icon_bascket_fill.svg" class="hover" alt="">
+            </a>
+            <section class="cart__details">
+              <div class="cart__details_title">YOUR BAG (2)</div>
+              <ul class="cart__details_list">
+                <li>
+                  <a href="" class="product--delete"></a>
+                  <div class="product--photo">
+                    <a href="">
+                      <img src="./img/product-1.jpg" alt="">
+                    </a>
+                  </div>
+                  <div class="product--details">
+                    <h5>
+                      <a href="">Heritage Sea Storm print jacket GUCCI</a>
+                    </h5>
+                    <p><span>SIZE:</span> M</p>
+                    <p>15 600 uaH</p>
+                  </div>
+                </li>
+                <li>
+                  <a href="" class="product--delete"></a>
+                  <div class="product--photo">
+                    <a href="">
+                      <img src="./img/product-1.jpg" alt="">
+                    </a>
+                  </div>
+                  <div class="product--details">
+                    <h5>
+                      <a href="">Heritage Sea Storm print jacket GUCCI</a>
+                    </h5>
+                    <p><span>SIZE:</span> S</p>
+                    <p>23 600 uaH</p>
+                  </div>
+                </li>
+              </ul>
+              <div class="cart__footer">
+                <b>TOTAL: 39 200 UAH</b>
+                <a href="" class="btn">
+                  <span>CHECKOUT</span>
+                </a>
+              </div>
+            </section>
+          </div>
           <div class="lang">
             <select id="lang-select">
               <option value="">eng</option>
@@ -145,28 +197,265 @@
       </div>
     </header>
     <!-- BEGIN content -->
-    <main class="homepage">
-      <!-- <h1>Index page,</h1>
-
-	
-	
-
-	
-
-
-	
-		
-		
-		
-		<li>Item1</li>
-		
-		<li>Item2</li>
-		
-	 -->
+    <main class="home">
+      <article class="home__hero">
+        <div class="home__hero_photo">
+          <img src="./img/gbg-1.jpg" alt="">
+        </div>
+        <div class="home__hero_details">
+          <h1>Pret-A-Porter Boutique</h1>
+          <p>of haute couture, every item of which is a work of art</p>
+          <a href="" class="arrow">ABOUT US</a>
+        </div>
+      </article>
+      <article class="chessboard">
+        <section class="chessboard__row">
+          <div class="background">
+            <img src="./img/gbg-2.jpg" alt="">
+          </div>
+          <div class="details">
+            <h2>Women’s Clothing</h2>
+            <div class="details--hover">
+              <div class="details--photo">
+                <a href="">
+                  <img src="./img/product-1.jpg" alt="">
+                </a>
+              </div>
+              <a href="" class="arrow">GO TO SHOPING</a>
+            </div>
+          </div>
+        </section>
+        <section class="chessboard__row">
+          <div class="background">
+            <img src="./img/gbg-1.jpg" alt="">
+          </div>
+          <div class="details">
+            <h2>Man’s Clothing</h2>
+            <div class="details--hover">
+              <div class="details--photo">
+                <a href="">
+                  <img src="./img/product-2.jpg" alt="">
+                </a>
+              </div>
+              <a href="" class="arrow">GO TO SHOPING</a>
+            </div>
+          </div>
+        </section>
+        <section class="chessboard__row">
+          <div class="background">
+            <img src="./img/gbg-2.jpg" alt="">
+          </div>
+          <div class="details">
+            <h2>Женская Обувь</h2>
+            <div class="details--hover">
+              <div class="details--photo">
+                <a href="">
+                  <img src="./img/product-3.jpg" alt="">
+                </a>
+              </div>
+              <a href="" class="arrow">перейти к покупкам</a>
+            </div>
+          </div>
+        </section>
+        <section class="chessboard__row">
+          <div class="background">
+            <img src="./img/gbg-1.jpg" alt="">
+          </div>
+          <div class="details">
+            <h2>Мужская Обувь</h2>
+            <div class="details--hover">
+              <div class="details--photo">
+                <a href="">
+                  <img src="./img/product-1.jpg" alt="">
+                </a>
+              </div>
+              <a href="" class="arrow">перейти к покупкам</a>
+            </div>
+          </div>
+        </section>
+        <section class="chessboard__row">
+          <div class="background">
+            <img src="./img/gbg-2.jpg" alt="">
+          </div>
+          <div class="details">
+            <h2>Women Bags</h2>
+            <div class="details--hover">
+              <div class="details--photo">
+                <a href="">
+                  <img src="./img/product-2.jpg" alt="">
+                </a>
+              </div>
+              <a href="" class="arrow">GO TO SHOPING</a>
+            </div>
+          </div>
+        </section>
+        <section class="chessboard__row">
+          <div class="background">
+            <img src="./img/gbg-1.jpg" alt="">
+          </div>
+          <div class="details">
+            <h2>Man Bags</h2>
+            <div class="details--hover">
+              <div class="details--photo">
+                <a href="">
+                  <img src="./img/product-3.jpg" alt="">
+                </a>
+              </div>
+              <a href="" class="arrow">GO TO SHOPING</a>
+            </div>
+          </div>
+        </section>
+        <section class="chessboard__row">
+          <div class="background">
+            <img src="./img/gbg-2.jpg" alt="">
+          </div>
+          <div class="details">
+            <h2>Women Accessories</h2>
+            <div class="details--hover">
+              <div class="details--photo">
+                <a href="">
+                  <img src="./img/product-1.jpg" alt="">
+                </a>
+              </div>
+              <a href="" class="arrow">GO TO SHOPING</a>
+            </div>
+          </div>
+        </section>
+        <section class="chessboard__row">
+          <div class="background">
+            <img src="./img/gbg-1.jpg" alt="">
+          </div>
+          <div class="details">
+            <h2>Man Accessories</h2>
+            <div class="details--hover">
+              <div class="details--photo">
+                <a href="">
+                  <img src="./img/product-2.jpg" alt="">
+                </a>
+              </div>
+              <a href="" class="arrow">GO TO SHOPING</a>
+            </div>
+          </div>
+        </section>
+      </article>
+      <article class="slider">
+        <h2>Our Blog</h2>
+        <!-- Slider main container -->
+        <div class="swiper-container">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="slide__photo">
+                <a href="">
+                  <img src="./img/slider-1.jpg" alt="">
+                  <img src="./img/gbg-1.jpg" alt="">
+                </a>
+              </div>
+              <time>02.01.2018</time>
+              <h4>Коллекция обуви Леандры Медин для Net-a-Porter</h4>
+            </div>
+            <div class="swiper-slide">
+              <div class="slide__photo">
+                <a href="">
+                  <img src="./img/slider-2.jpg" alt="">
+                  <img src="./img/gbg-1.jpg" alt="">
+                </a>
+              </div>
+              <time>02.01.2018</time>
+              <h4>Коллекция обуви Леандры Медин для Net-a-Porter</h4>
+            </div>
+            <div class="swiper-slide">
+              <div class="slide__photo">
+                <a href="">
+                  <img src="./img/slider-3.jpg" alt="">
+                  <img src="./img/gbg-1.jpg" alt="">
+                </a>
+              </div>
+              <time>02.01.2018</time>
+              <h4>Коллекция обуви Леандры Медин для Net-a-Porter</h4>
+            </div>
+            <div class="swiper-slide">
+              <div class="slide__photo">
+                <a href="">
+                  <img src="./img/slider-4.jpg" alt="">
+                  <img src="./img/gbg-1.jpg" alt="">
+                </a>
+              </div>
+              <time>02.01.2018</time>
+              <h4>Коллекция обуви Леандры Медин для Net-a-Porter</h4>
+            </div>
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </article>
+      <article class="chessboard community">
+        <section class="chessboard__row">
+          <div class="background">
+            <img src="./img/gbg-2.jpg" alt="">
+          </div>
+          <div class="details">
+            <h2>Conect to Lookbook Viber Community</h2>
+            <a href="" class="btn-viber">
+              <img src="./img/icon_joinviber.svg" alt="">
+              <img src="./img/icon_joinviber_fill.svg" class="hover" alt="">
+              <span>Join us on Viber</span>
+            </a>
+          </div>
+        </section>
+      </article>
     </main>
     <!-- END content -->
     <!-- FOOTER -->
-    <p>Hello from FOOTER</p>
+    <footer>
+      <div class="footer__toplinks">
+        <a href="" class="link">ABOUT US</a>
+        <a href="" class="link">OUR BLOG</a>
+        <a href="" class="link">CONTACTS</a>
+      </div>
+      <div class="wrapper">
+        <section class="tel">
+          <h5>Звонить нам</h5>
+          <a href="tel:+380669565585">+38(066)9565585</a>
+          <a href="tel:+380969594374">+38(096)9594374</a>
+        </section>
+        <section class="subscribe">
+          <h5>Будьте в курсе наших новинок, создавайте свои образы вместе с LOOKBOOK</h5>
+          <div class="subscribe--form">
+            <input type="email" placeholder="Введите E-mail">
+            <button class="btn-reverse">
+              <span>подписаться</span>
+            </button>
+          </div>
+        </section>
+        <section class="social">
+          <h5>Следить за нами</h5>
+          <div class="social--list">
+            <a href="">
+              <img src="./img/icon_viber.svg" alt="">
+            </a>
+            <a href="">
+              <img src="./img/icon_fb.svg" alt="">
+            </a>
+            <a href="">
+              <img src="./img/icon_insta.svg" alt="">
+            </a>
+          </div>
+        </section>
+        <section class="schedule">
+          <h5>Мы работаем для Вас </h5>
+          <p>c 10:00 до 21:00</p>
+        </section>
+        <section class="copyright">
+          <span>© 2020 LOOKBOOK. ALL RIGHTS RESERVED</span>
+          <a href="">terms and conditions</a>
+        </section>
+        <section class="designby">design by Churilov</section>
+      </div>
+    </footer>
     <!-- BEGIN scripts -->
     <script type="text/javascript" src="js/app.js"></script>
     <!-- END scripts -->

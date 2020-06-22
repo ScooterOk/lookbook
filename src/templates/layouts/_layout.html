@@ -5,7 +5,7 @@
     <meta charset="utf-8"/>
     <title>{% if title %}{{ title }}{% else %}Template{% endif %}</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0"/>
     <meta name="theme-color" content="#fff"/>
     <meta name="format-detection" content="telephone=no"/>
     <link rel="stylesheet" media="all" href="css/app.css"/>
@@ -13,17 +13,19 @@
   </head>
   <body>
 
+    <div id="loader"></div>
+    <div id="gotop"></div>
+
     <!-- HEADER -->
-    {% include "partials/_header.html" %}
+    {% include "partials/_header.html" %}    
+        <!-- BEGIN content -->
+        <main class="{{class}}">
+          {% block content %}{% endblock %}
+        </main>
+        <!-- END content -->
 
-    <!-- BEGIN content -->
-    <main class="{{class}}">
-      {% block content %}{% endblock %}
-    </main>
-    <!-- END content -->
-
-    <!-- FOOTER -->
-    {% include "partials/_footer.html" %}
+        <!-- FOOTER -->
+        {% include "partials/_footer.html" %}    
 
     <!-- BEGIN scripts -->
     <script type="text/javascript" src="js/app.js"></script>

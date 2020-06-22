@@ -1,3 +1,7 @@
+* {
+	box-sizing: border-box;
+}
+
 body {
 	background: #fff;
 	font-family: $Cormorant;
@@ -6,4 +10,24 @@ body {
 a {
 	text-decoration: none;
 	color: currentColor;
+}
+
+h1 {
+	font-family: $Cormorant;
+	font-size: 100px;
+	line-height: 90px;
+	font-weight: 300;
+}
+h2 {
+	font-family: $Cormorant;
+	font-size: 72px;
+	line-height: 60px;
+	font-weight: 300;
+}
+
+h4 {
+	font-family: $Cormorant;
+	font-size: 30px;
+	line-height: 36px;
+	font-weight: 600;
 }

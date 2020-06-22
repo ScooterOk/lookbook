@@ -101,13 +101,20 @@
         </div>
       </div>
     </section>
-    <a href="" class="header__logo">Lookbook</a>
+    <a href="./" class="header__logo">Lookbook</a>
     <section class="header__options">
       <div class="search">
         <button class="icon icon-search" data-action="toggleSearch">
           <img src="./img/icon_search.svg" alt="">
           <img src="./img/icon_search_fill.svg" class="hover" alt="">
         </button>
+        <section class="search__from">
+          <button class="close" id="header-close-form"></button>
+          <form action="">
+            <input type="text" id="header-search-input" placeholder="Search" autocomplete="off">
+            <button type="submit" id="header-search-submit">Search</button>
+          </form>
+        </section>
       </div>
       <a href="" class="icon">
         <img src="./img/icon_account.svg" alt="">
@@ -117,10 +124,53 @@
         <img src="./img/icon_wish.svg" alt="">
         <img src="./img/icon_wish_fill.svg" class="hover" alt="">
       </a>
-      <a href="" class="icon">
-        <img src="./img/icon_bascket.svg" alt="">
-        <img src="./img/icon_bascket_fill.svg" class="hover" alt="">
-      </a>
+      <div class="cart" data-action="toggleCart">
+        <a href="" class="icon">
+          <img src="./img/icon_bascket.svg" alt="">
+          <img src="./img/icon_bascket_fill.svg" class="hover" alt="">
+        </a>
+        <section class="cart__details">
+          <div class="cart__details_title">YOUR BAG (2)</div>
+          <ul class="cart__details_list">
+            <li>
+              <a href="" class="product--delete"></a>
+              <div class="product--photo">
+                <a href="">
+                  <img src="./img/product-1.jpg" alt="">
+                </a>
+              </div>
+              <div class="product--details">
+                <h5>
+                  <a href="">Heritage Sea Storm print jacket GUCCI</a>
+                </h5>
+                <p><span>SIZE:</span> M</p>
+                <p>15 600 uaH</p>
+              </div>
+            </li>
+            <li>
+              <a href="" class="product--delete"></a>
+              <div class="product--photo">
+                <a href="">
+                  <img src="./img/product-1.jpg" alt="">
+                </a>
+              </div>
+              <div class="product--details">
+                <h5>
+                  <a href="">Heritage Sea Storm print jacket GUCCI</a>
+                </h5>
+                <p><span>SIZE:</span> S</p>
+                <p>23 600 uaH</p>
+              </div>
+            </li>
+          </ul>
+          <div class="cart__footer">
+            <b>TOTAL:  39 200 UAH</b>
+            <a href="" class="btn">
+              <span>CHECKOUT</span>
+            </a>
+          </div>
+        </section>
+      </div>      
       <div class="lang">
         <select id="lang-select">
           <option value="">eng</option>

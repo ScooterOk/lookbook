@@ -1,0 +1,224 @@
+main.card {
+  h2 {
+    margin-top: 20px;
+    text-align: center;
+  }
+  .card__article {
+    display: flex;
+    margin-top: 60px;
+    padding: 0 50px;
+    position: relative;
+    align-items: flex-start;
+    .favorites {
+      position: absolute;
+      top: -10px;
+      right: 100px;
+      width: 40px;
+      height: 40px;
+      &.active {
+        img {
+          opacity: 0;
+          &.hover {
+            opacity: 1;
+          }
+        }
+      }
+      &:hover {
+        img {
+          opacity: 0;
+          &.hover {
+            opacity: 1;
+          }
+        }
+      }
+      img {
+        width: auto;
+        height: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;    
+        transform: translate(-50%, -50%);
+        transition: opacity 400ms ease;        
+        &.hover {
+          opacity: 0;
+        }
+      }
+    }
+    .card__article_photo {
+      width: 50%;
+      flex-shrink: 0;
+      ul {
+        li {
+          width: 100%;
+          padding-top: 118%;
+          position: relative;
+          margin-bottom: 70px;
+          &:first-child {
+            &::before {
+              content: "";
+              display: block;
+              width: 100%;
+              height: 90%;
+              background-color: #141414;
+              position: absolute;
+              top: 50%;
+              left: 0;
+              transform: translate(-50px, -50%);
+            }
+          }
+          &:last-child {
+            margin-bottom: 0;
+          }
+          img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+  .card__article_details {
+    margin-left: 50px;
+    padding-left: 60px;
+    &.fixed {
+      position: fixed;
+      left: 50%;
+      top: 120px;
+    }
+    .article {
+      font-family: $Futura;
+      font-size: 14px;
+      color: #8e8e8e;
+      font-weight: 500;
+    }
+    .price {
+      font-family: $Cormorant;
+      font-size: 30px;
+      font-weight: 600;
+      margin-top: 20px;
+      font-weight: 300;
+      b {
+        font-size: 52px;
+        font-weight: 300;
+        letter-spacing: 0;
+      }
+      //text-transform: uppercase;
+    }
+    .description {
+      margin-top: 40px;
+      font-family: $Futura;
+      font-size: 14px;
+      color: #141414;
+      font-weight: 500;
+      a {
+        border-bottom: 1px dotted #000;
+      }
+    }
+    .size {
+      margin-top: 40px;
+      font-family: $Futura;
+      color: #141414;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      & > span {
+        font-size: 10px;
+        margin-right: 20px;
+        text-transform: uppercase;
+      }
+      .size-radio {
+        margin-right: 25px;
+        font-size: 14px;
+        position: relative;
+        text-transform: uppercase;
+        input {
+          visibility: hidden;
+          position: absolute;
+          width: 0;
+          height: 0;
+          top: -10000px;
+          left: -10000px;
+        }
+        span {
+          display: flex;
+          width: 30px;
+          height: 30px;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          cursor: pointer;
+          border: 1px solid transparent;
+          transition: all 400ms ease;
+          &:hover {
+            border-color: currentColor;
+          }
+        }
+        input:checked + span {
+          background-color: #141414;
+          color: #fff;
+        }
+      }
+    }
+    .buy {
+      margin-top: 50px;
+      width: 200px;
+      .btn {
+        width: 100%;
+      }
+    }
+    .question {
+      margin-top: 56px;
+      display: flex;
+      align-items: center;
+      font-family: $Futura;
+      color: #141414;
+      font-weight: 500;
+      font-size: 10px;
+      span {
+        margin-right: 25px;
+      }
+      a {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 20px;
+        img {
+          width: 85%;
+        }
+      }
+    }
+    .phone {
+      font-family: $Futura;
+      font-size: 22px;
+      font-weight: 300;
+      margin-top: 30px;
+      color: #141414;
+    }
+  }
+  .card__description {
+    margin-top: 80px;
+    padding: 0 50px;
+    h2 {
+      text-align: center;
+    }
+    .description--details {
+      width: 50%;
+      margin-left: auto;
+      margin-top: 40px;
+      font-family: $Futura;
+      font-size: 24px;
+      line-height: 36px;
+      font-weight: 300;
+      color: #141414;
+      p {
+        min-height: 1em;
+      }
+    }
+  }
+}

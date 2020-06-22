@@ -1,26 +1,207 @@
 ---
 title: Index page,
-class: 'homepage'
+class: 'home'
 ---
 {% extends "layouts/_layout.html" %}
 
 {% block content %}
 	
 	{# variable example #}
-	<!-- <h1>{{title}}</h1>
+	
+	<article class="home__hero">
+		<div class="home__hero_photo">
+			<img src="./img/gbg-1.jpg" alt="">
+		</div>
+		<div class="home__hero_details">
+			<h1>Pret-A-Porter Boutique</h1>
+			<p>of haute couture, every item of which is a work of art</p>
+			<a href="" class="arrow">ABOUT US</a>
+		</div>
+	</article>
+
+
+
+	<article class="chessboard">
+		<section class="chessboard__row">
+			<div class="background">
+				<img src="./img/gbg-2.jpg" alt="">
+			</div>
+			<div class="details">				
+				<h2>Women’s Clothing</h2>
+				<div class="details--hover">
+					<div class="details--photo">
+						<a href="">
+							<img src="./img/product-1.jpg" alt="">
+						</a>
+					</div>
+					<a href="" class="arrow">GO TO SHOPING</a>
+				</div>
+			</div>
+		</section>
+		<section class="chessboard__row">
+			<div class="background">				
+				<img src="./img/gbg-1.jpg" alt="">				
+			</div>
+			<div class="details">				
+				<h2>Man’s Clothing</h2>
+				<div class="details--hover">
+					<div class="details--photo">
+						<a href="">
+							<img src="./img/product-2.jpg" alt="">
+						</a>
+					</div>
+					<a href="" class="arrow">GO TO SHOPING</a>
+				</div>
+			</div>
+		</section>
+		<section class="chessboard__row">
+			<div class="background">
+				<img src="./img/gbg-2.jpg" alt="">
+			</div>
+			<div class="details">				
+				<h2>Женская Обувь</h2>
+				<div class="details--hover">
+					<div class="details--photo">
+						<a href="">
+							<img src="./img/product-3.jpg" alt="">
+						</a>
+					</div>
+					<a href="" class="arrow">перейти к покупкам</a>
+				</div>
+			</div>
+		</section>
+		<section class="chessboard__row">
+			<div class="background">
+				<img src="./img/gbg-1.jpg" alt="">
+			</div>
+			<div class="details">				
+				<h2>Мужская Обувь</h2>
+				<div class="details--hover">
+					<div class="details--photo">
+						<a href="">
+							<img src="./img/product-1.jpg" alt="">
+						</a>
+					</div>
+					<a href="" class="arrow">перейти к покупкам</a>
+				</div>
+			</div>
+		</section>
+		<section class="chessboard__row">
+			<div class="background">
+				<img src="./img/gbg-2.jpg" alt="">
+			</div>
+			<div class="details">				
+				<h2>Women Bags</h2>
+				<div class="details--hover">
+					<div class="details--photo">
+						<a href="">
+							<img src="./img/product-2.jpg" alt="">
+						</a>
+					</div>
+					<a href="" class="arrow">GO TO SHOPING</a>
+				</div>
+			</div>
+		</section>
+		<section class="chessboard__row">
+			<div class="background">
+				<img src="./img/gbg-1.jpg" alt="">
+			</div>
+			<div class="details">				
+				<h2>Man Bags</h2>
+				<div class="details--hover">
+					<div class="details--photo">
+						<a href="">
+							<img src="./img/product-3.jpg" alt="">
+						</a>
+					</div>
+					<a href="" class="arrow">GO TO SHOPING</a>
+				</div>
+			</div>
+		</section>
+		<section class="chessboard__row">
+			<div class="background">
+				<img src="./img/gbg-2.jpg" alt="">
+			</div>
+			<div class="details">				
+				<h2>Women Accessories</h2>
+				<div class="details--hover">
+					<div class="details--photo">
+						<a href="">
+							<img src="./img/product-1.jpg" alt="">
+						</a>
+					</div>
+					<a href="" class="arrow">GO TO SHOPING</a>
+				</div>
+			</div>
+		</section>
+		<section class="chessboard__row">
+			<div class="background">
+				<img src="./img/gbg-1.jpg" alt="">
+			</div>
+			<div class="details">				
+				<h2>Man Accessories</h2>
+				<div class="details--hover">
+					<div class="details--photo">
+						<a href="">
+							<img src="./img/product-2.jpg" alt="">
+						</a>
+					</div>
+					<a href="" class="arrow">GO TO SHOPING</a>
+				</div>
+			</div>
+		</section>
+	</article>
+
+
 
 	
+
+	<article class="slider">
+		<h2>Our Blog</h2>
+		<!-- Slider main container -->
+		<div class="swiper-container">
+			<!-- Additional required wrapper -->
+			<div class="swiper-wrapper">					
+
+				{% for slide in range(0, 4) %}
+
+					<div class="swiper-slide">
+						<div class="slide__photo">
+							<a href="">
+								<img src="./img/slider-{{loop.index}}.jpg" alt="">
+								<img src="./img/gbg-1.jpg" alt="">
+							</a>
+						</div>
+						<time>02.01.2018</time>	
+						<h4>Коллекция обуви Леандры Медин для Net-a-Porter</h4>
+					</div>
+					{% endfor %}
+			</div>
+			<!-- If we need pagination -->
+			<div class="swiper-pagination"></div>
+
+			<!-- If we need navigation buttons -->
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-button-next"></div>			
+		</div>
+	</article>
+
+	<article class="chessboard community">
+		<section class="chessboard__row">
+			<div class="background">
+				<img src="./img/gbg-2.jpg" alt="">
+			</div>
+			<div class="details">
+				<h2>Conect to Lookbook Viber Community</h2>
+				<a href="" class="btn-viber">
+					<img src="./img/icon_joinviber.svg" alt="">
+					<img src="./img/icon_joinviber_fill.svg" class="hover" alt="">
+					<span>Join us on Viber</span>
+				</a>
+			</div>
+		</section>
+	</article>
 	
 
-	
-
-
-	{# data usage example #}
-		{% import "data/data.html" as tests %}
-		
-		{% for test in tests.list %}
-		<li>{{test.title}}</li>
-		{% endfor %}
-	{# end of example #} -->
 
 {% endblock %}
