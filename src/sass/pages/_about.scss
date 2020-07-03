@@ -1,0 +1,69 @@
+main.about {
+  h1 {
+    text-align: center;
+  }
+  .about__hero {
+    margin-top: 70px;
+    img {
+      width: 100%;
+      height: 31vw;
+      object-fit: cover;
+    }
+  }
+  .about__article {
+    margin-top: 70px;
+    .about__article_arrow {
+      width: 50%;
+      margin-left: auto;
+      padding-right: 25%;
+      font: 300 24px/30px $Futura;
+      color: #141414;
+      position: relative;
+      margin-bottom: 70px;
+      &::after {
+        content: "←";
+        font: 300 30px/30px $Cormorant;
+        position: absolute;
+        left: -10px;
+        bottom: -77px;
+        transform: rotate(-90deg);
+      }
+    }
+    .about__article_dubble {
+      display: flex;
+      padding-top: 140px;
+      .photo {
+        width: 50%;
+        flex-shrink: 0;
+        text-align: center;
+        position: relative;
+        &::before {
+          content: "";
+          display: block;
+          width: 50%;
+          height: 100%;
+          background-color: #141414;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        img {
+          width: 50%;
+          height: calc((25vw / 100) * 125);
+          object-fit: cover;
+          transform: translateY(-60px);
+        }
+      }
+      .text {
+        width: 50%;
+        flex-shrink: 0;
+        font: 300 24px/30px $Futura;
+        color: #141414;
+        padding-right: 130px;
+      }
+    }
+  }
+  .chessboard.community {
+    margin-top: 180px;
+  }
+}

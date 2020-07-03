@@ -1,0 +1,60 @@
+---
+title: Index page,
+class: 'account'
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	{# variable example #}
+	
+	<h2>Account</h2>
+
+	<nav class="account__nav">
+		<a href="">orders</a>
+		<a href="">Addresses</a>
+		<a href="">ACCOUNT DETAILS</a>
+		<a href="" class="current">wishlist</a>
+	</nav>
+	
+	<article class="catalog__list">
+		{% for i in range(0, 2) %}
+		<section class="card">
+			<div class="card--photo">
+				<a href="">
+					<img src="./img/product-1.jpg" alt="">
+				</a>
+			</div>
+			<h5>
+				<a href="">Heritage Sea Storm print jacket GUCCI</a>
+				<a href="" class="favorites">
+					<img src="./img/icon_wish.svg" alt="">
+					<img src="./img/icon_wish_fill.svg" class="hover" alt="">
+				</a>
+			</h5>
+			<div class="card--price">15 600 uaH</div>
+		</section>
+		{% endfor %}
+	</article>
+
+	<section class="account__share">
+		<h5>share this items using social or email</h5>
+		<div class="account__share_links">			
+			<a href="">
+				<img src="./img/card_viber.svg" alt="">
+			</a>
+			<a href="">
+				<img src="./img/card_whatsapp.svg" alt="">
+			</a>
+			<a href="">
+				<img src="./img/card_telegram.svg" alt="">
+			</a>
+			<a href="">
+				<img src="./img/icon_mail.svg" alt="">
+			</a>
+		</div>
+	</section>
+	
+
+
+{% endblock %}

@@ -1,0 +1,95 @@
+---
+title: Index page,
+class: 'account'
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	{# variable example #}
+	
+	<h2>Account</h2>
+
+	<nav class="account__nav">
+		<a href="" class="current">orders</a>
+		<a href="">Addresses</a>
+		<a href="">ACCOUNT DETAILS</a>
+		<a href="">wishlist</a>
+	</nav>
+
+
+	<article class="account__orders">
+		<table id="orders-table">
+			<thead>
+				<tr>
+					<th>DATE</th>
+					<th>NUMBER OF ORDER</th>
+					<th>total PRICE</th>
+					<th>STATUS</th>
+					<th>DETAILS</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for i in range(0, 4) %}
+				<!-- ORDER ITEM START -->
+				<tr class="view">
+					<td class="date">12.06.2020</td>
+					<td class="id">#53634</td>
+					<td class="price">12 000 USD</td>
+					<td class="status">Completed</td>
+					<td class="action">
+							<div>
+								<span class="more">More</span>
+								<span class="less">Less</span>
+							</div>							
+						</div>
+					</td>
+				</tr>
+				<tr class="fold">
+					<td></td>
+					<td colspan="4">
+						<ul class="order--details">
+							<li>
+								<div class="photo">
+									<a href="">
+										<img src="./img/product-2.jpg" alt="">
+									</a>									
+								</div>
+								<div class="description">
+									<h5>
+										<a href="">Heritage Sea Storm print jacket GUCCI</a>
+									</h5>
+									<div class="size">
+										<span>SIZE:</span>
+										<b>M</b>
+									</div>
+									<div class="price">15 600 uaH</div>
+								</div>
+							</li>
+							<li>
+								<div class="photo">
+									<img src="./img/product-2.jpg" alt="">
+								</div>
+								<div class="description">
+									<h5>Heritage Sea Storm print jacket GUCCI</h5>
+									<div class="size">
+										<span>SIZE:</span>
+										<b>M</b>
+									</div>
+									<div class="price">15 600 uaH</div>
+								</div>
+							</li>
+						</ul>
+					</td>
+				</tr>
+				<!-- ORDER ITEM END -->
+				{% endfor %}
+			</tbody>
+		</table>
+	</article>
+	
+		
+	
+
+
+{% endblock %}

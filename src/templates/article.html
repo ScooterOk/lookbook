@@ -1,0 +1,91 @@
+---
+title: Index page,
+class: 'article'
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	{# variable example #}
+	
+	
+	<div class="breadcrumbs">
+		<a href="">OUR BLOG</a>		
+		<span>ARTICLE</span>
+	</div>
+
+	<h2 class="article__title">Leandra Medins Shoe’s Collection for Net-a-Porter Exlusive Modern Trends</h2>
+	<div class="article__date">02.07.2020</div>
+	<div class="article__photo">
+		<img src="./img/article-preview.jpg" alt="">
+	</div>
+
+	<article class="article__body">
+		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+		<p></p>
+		<p></p>
+		<img src="./img/article-1.jpg" alt="">		
+		<p></p>
+		<h2>H2 Leandra Medins Shoe’s Collection for Net-a-Porter Exlusive Modern Trends</h2>
+		<p></p>
+		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+		<p></p>
+		<p></p>
+		<p>
+			<img src="./img/article-2.jpg" alt="">
+		</p>
+		<p></p>
+		<h3>H3 Leandra Medins Shoe’s Collection for Net-a-Porter Exlusive Modern Trends</h3>
+		<h4>H4 Leandra Medins Shoe’s Collection for Net-a-Porter Exlusive Modern Trends</h4>
+		<p></p>
+		<p></p>
+		<ul>
+			<li>List item lorem</li>
+			<li>List item lorem</li>
+			<li>List item lorem</li>
+		</ul>
+		<p></p>
+		<p></p>
+		<ol>
+			<li>Numeric list item lorem</li>
+			<li>Numeric list item lorem</li>
+			<li>Numeric list item lorem</li>
+		</ol>
+	</article>
+	
+
+	<article class="slider">
+		<h2>Read More</h2>
+		<!-- Slider main container -->
+		<div class="swiper-container">
+			<!-- Additional required wrapper -->
+			<div class="swiper-wrapper">					
+
+				{% for slide in range(0, 4) %}
+
+					<div class="swiper-slide">
+						<div class="slide__photo">
+							<a href="">
+								<img src="./img/slider-{{loop.index}}.jpg" alt="">
+								<img src="./img/gbg-1.jpg" alt="">
+							</a>
+						</div>
+						<time>02.01.2018</time>	
+						<h4>Коллекция обуви Леандры Медин для Net-a-Porter</h4>
+					</div>
+					{% endfor %}
+			</div>
+			<!-- If we need pagination -->
+			<div class="swiper-pagination"></div>
+
+			<!-- If we need navigation buttons -->
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-button-next"></div>			
+		</div>
+	</article>
+
+	
+	
+
+
+{% endblock %}

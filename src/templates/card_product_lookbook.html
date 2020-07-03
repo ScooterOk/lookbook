@@ -1,0 +1,52 @@
+---
+title: Index page,
+class: 'сheckout'
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	<div class="сheckout__steps">
+		<b>1. MY BAG</b>
+		<span>2. Delivery & Payment</span>
+		<span>3. cONFIRM</span>
+	</div>
+
+	<article class="сheckout__lookbook">
+		<ul class="сheckout__lookbook_list">
+			{% for i in range(0, 2) %}
+			<li>
+				<div class="photo">
+					<a href="">
+						<img src="./img/product-2.jpg" alt="">
+					</a>
+				</div>
+				<div class="details">
+					<h5>
+						<a href="">Heritage Sea Storm print jacket GUCCI</a>
+					</h5>
+					<div class="article">#934156</div>
+					<div class="size">
+						<span>SIZE:</span>
+						<b>M</b>
+					</div>
+					<div class="price">15 600 uaH</div>
+				</div>
+			</li>
+			{% endfor %}
+		</ul>
+		<aside class="сheckout__total">
+			<div class="amount">amount of products: 2</div>	
+			<div class="total">TOTAL:  39 200 UAH</div>
+			<a href="" class="btn">
+				<span>CHECKOUT</span>
+			</a>
+		</aside>
+	</article>
+
+	<div class="сheckout__back">
+		<a href="" class="arrow">BAck to shopping</a>
+	</div>
+	
+	
+{% endblock %}

@@ -1,11 +1,16 @@
 import { gsap } from "gsap";
+import IMask from 'imask';
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import Header from './lib/header';
 import Chessboard from './lib/chessboard';
-import Slider from './lib/slider';
+import Account from './lib/account';
 import Homepage from './lib/homepage';
 import Card from './lib/card';
 import Catalog from './lib/catalog';
+import Article from './lib/article';
+import Checkout from './lib/сheckout';
+
+
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -18,9 +23,7 @@ const app = {
 function appInit() {
   window.scrollTo(0, 0);
   
-
-
-  const page = document.querySelector('main').className;
+  const page = document.querySelector('main').className;  
   switch(page) {
     case 'home':
       new Homepage(Chessboard).init();
@@ -31,6 +34,15 @@ function appInit() {
     case 'catalog':
       new Catalog(app).init();
       break;
+    case 'account':
+      new Account().init();
+      break;
+    case 'article':
+      new Article().init();
+      break;
+    case 'сheckout':
+      new Checkout().init();
+      break;     
   
     default:      
       break;
@@ -73,7 +85,47 @@ function appInit() {
 
   gsap.to('#loader', {duration: 0.8, opacity: 0, onComplete() {
     gsap.set('#loader', {display: 'none'});
-  }})
+  }});
+
+  // Forms init
+  document.querySelectorAll('.form-control input, .form-control textarea').forEach(function(el, i){
+
+    el.addEventListener('focus', function(e){
+      const fc = this.closest('.form-control');
+      const ph = fc.querySelector('label');
+      gsap.to(ph, {duration: 0.4, opacity: 0});
+    });
+
+    el.addEventListener('blur', function(e){
+      const val = this.value.trim().length;
+      const fc = this.closest('.form-control');
+      const ph = fc.querySelector('label');
+      if(val){
+       fc.classList.add('filled');
+      }else{
+        fc.classList.remove('filled');
+        this.value = '';
+        gsap.to(ph, {duration: 0.4, opacity: 1});
+      }      
+    });
+
+    el.addEventListener('keyup', function(e){      
+      const val = this.value.trim().length;
+      const fc = this.closest('.form-control');
+      console.log(val);
+      if(val){
+        fc.classList.add('filled');
+      }else{
+        fc.classList.remove('filled');
+      }
+    });
+  });
+  document.querySelectorAll('input[type="tel"]').forEach(el => {
+    IMask(
+      el, {
+        mask: '+{38}(000)000-00-00'
+      });
+  })
 }
 
 

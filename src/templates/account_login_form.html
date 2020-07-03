@@ -1,0 +1,132 @@
+---
+title: Index page,
+class: 'account'
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	{# variable example #}
+	
+	<h2>Account</h2>
+	
+	<article class="tabs">
+			<ul class="tabs__nav">
+				<li data-target="login" class="current">
+					<a href="">SIGN IN</a>
+				</li>
+				<li data-target="register">
+					<a href="">REGISTER</a>
+				</li>
+			</ul>
+			<ul class="tabs__body">
+				<li id="login" class="current">
+					<div class="account__form">
+						<form action="">
+							<div class="form-control">
+								<input type="text" name="">
+								<label>Email</label>
+								<span class="error-msg">Error text</span>
+							</div>
+							<div class="form-control">
+								<input type="password" name="">
+								<label>Password</label>
+								<span class="error-msg">Error text</span>
+							</div>
+							<div class="forgot">
+								<a href="" class="arrow">Forgot password?</a>
+							</div>
+							<div class="remember">
+								<label class="custom-checkbox">
+                  <input type="checkbox">
+                  <span>Remember me</span>
+                </label>
+							</div>
+							<div class="form-submit">
+								<button class="btn">
+									<span>SIGN IN</span>
+								</button>
+							</div>
+						</form>
+					</div>
+				</li>
+				<li id="register">
+					<div class="account__form">
+						<form action="">
+							<div class="form-control required">
+								<input type="text" name="">
+								<label>First name</label>
+								<span class="error-msg">Error text</span>
+							</div>
+							<div class="form-control required">
+								<input type="text" name="">
+								<label>Last name</label>
+								<span class="error-msg">Error text</span>
+							</div>
+							<div class="form-control required">
+								<input type="text" name="">
+								<label>Country</label>
+								<span class="error-msg">Error text</span>
+							</div>
+							<div class="form-control">
+								<input type="text" name="">
+								<label>City</label>
+								<span class="error-msg">Error text</span>
+							</div>
+							<div class="form-control required">
+								<input type="text" name="">
+								<label>Street</label>
+								<span class="error-msg">Error text</span>
+							</div>
+							<div class="dubble">
+								<div class="form-control required">
+									<input type="text" name="">
+									<label>№ hous</label>
+									<span class="error-msg">Error text</span>
+								</div>
+								<div class="form-control required">
+									<input type="text" name="">
+									<label>№ appartment</label>
+									<span class="error-msg">Error text</span>
+								</div>
+							</div>
+							<div class="form-control required">
+								<input type="tel" name="">
+								<label>Your Phone</label>
+								<span class="error-msg">Error text</span>
+							</div>
+							<div class="form-control required">
+								<input type="email" name="">
+								<label>Email</label>
+								<span class="error-msg">Error text</span>
+							</div>							
+							<div class="form-control required">
+								<input type="password" name="">
+								<label>Password</label>
+								<span class="error-msg">Error text</span>
+							</div>
+							<div class="form-control required">
+								<input type="password" name="">
+								<label>Repeat password</label>
+								<span class="error-msg">Error text</span>
+							</div>
+							<div class="terms">
+								<label class="custom-checkbox">
+									<input type="checkbox">
+									<span>I agree to the Privacy Policy</span>
+								</label>
+							</div>
+							<div class="form-submit">
+								<button class="btn">
+									<span>SAVE CHANGES</span>
+								</button>
+							</div>
+						</form>
+					</div>
+				</li>
+			</ul>
+	</article>
+	
+
+
+{% endblock %}

@@ -1,0 +1,161 @@
+main.сheckout {
+  .сheckout__steps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $Futura;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 500;
+    color: #8e8e8e;
+    text-transform: uppercase;  
+    b {
+      font-weight: 500;
+      color: #141414;
+    }
+    & > * {
+      padding-right: 37px;
+      position: relative;      
+      &::after {
+        content: "→";
+        font-family: $Cormorant;
+        font-size: 14px;      
+        line-height: 1;
+        position: absolute;
+        right: 15px;
+        top: -1px;
+      }
+    }
+  }
+  .сheckout__lookbook {
+    display: flex;
+    margin-top: 60px;
+    padding: 0 70px;
+    position: relative;
+    align-items: flex-start;
+    justify-content: space-between;
+    .сheckout__lookbook_list {
+      width: calc(100% - 340px - 70px);
+      flex-shrink: 0;
+      li {
+        margin-bottom: 30px;
+        display: flex;
+        border-bottom: 1px solid #d7d7d7;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        &:hover {
+          .photo {
+            a {
+              img {
+                transform: translate(0, 0)!important;  
+              }
+              &::before {
+                width: 90%;
+                transform: translate(5%, 24px);
+              }
+            }
+          }
+        }
+        .photo {
+          width: 34%;
+          padding-right: 20px;
+          padding-bottom: 45px;
+          margin-right: 40px;
+          a {
+            display: block;
+            width: 100%;
+            padding-top: 119%;
+            position: relative;
+            &::before {
+              content: "";
+              display: block;
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              top: 0;
+              left: 0;          
+              transform: translate(0px, 20px);
+              background-color: #000;          
+              transition: transform 700ms ease, width 700ms ease;          
+            }
+            img {
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              top: 0;
+              left: 0;          
+              object-fit: cover;          
+              transition: transform 800ms ease;          
+              backface-visibility: hidden;
+              transform: translate(20px, 0)!important;          
+            }
+          }
+        }
+        .details {
+          h5 {
+            font: 600 18px/24px $Cormorant;
+            color: #292828;
+            margin-bottom: 30px;
+          }
+          .article {
+            font-family: $Futura;
+            font-size: 14px;
+            color: #8e8e8e;
+            font-weight: 500;
+            margin-bottom: 30px;
+          }
+        }
+        .size {
+          font: 500 12px/1 $Futura;
+          color: #8e8e8e;
+          margin-bottom: 30px;
+          text-transform: uppercase;
+          b {
+            font-weight: initial;
+            color: #292828;
+            display: inline-block;
+            margin-left: 4px;
+          }
+        }
+        .price {
+          font: 500 14px/1 $Futura;
+          color: #292828;
+          text-transform: uppercase;
+        }
+      }
+    }
+    .сheckout__total {
+      width: 340px;
+      flex-shrink: 0;
+      font: 500 14px/1 $Futura;
+      color: #141414;
+      text-transform: uppercase;
+      &.fixed {
+        position: fixed;
+        right: 70px;        
+        top: 120px;
+      }
+      .amount {
+        height: 90px;
+        background-color: #f8f8f8;
+        border-bottom: 1px solid #d7d7d7;
+        display: flex;
+        align-items: center;
+        padding-left: 30px;
+      }
+      .total {
+        height: 90px;
+        background-color: #f8f8f8;
+        display: flex;
+        align-items: center;
+        padding-left: 30px;
+      }
+    }
+  }
+  .сheckout__back {
+    margin-top: 90px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}

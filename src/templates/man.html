@@ -1,0 +1,81 @@
+---
+title: Index page,
+class: 'category'
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	{# variable example #}
+	
+	<h1>Man</h1>
+
+	<article class="chessboard">
+		<section class="chessboard__row">
+			<div class="background">
+				<img src="./img/gbg-2.jpg" alt="">
+			</div>
+			<div class="details">				
+				<h2>Man’s Clothing</h2>
+				<div class="details--hover">
+					<div class="details--photo">
+						<a href="">
+							<img src="./img/product-1.jpg" alt="">
+						</a>
+					</div>
+					<a href="" class="arrow">GO TO SHOPING</a>
+				</div>
+			</div>
+		</section>
+		<section class="chessboard__row">
+			<div class="background">				
+				<img src="./img/gbg-1.jpg" alt="">				
+			</div>
+			<div class="details">				
+				<h2>Man’s Shoe</h2>
+				<div class="details--hover">
+					<div class="details--photo">
+						<a href="">
+							<img src="./img/product-2.jpg" alt="">
+						</a>
+					</div>
+					<a href="" class="arrow">GO TO SHOPING</a>
+				</div>
+			</div>
+		</section>
+		<section class="chessboard__row">
+			<div class="background">
+				<img src="./img/gbg-2.jpg" alt="">
+			</div>
+			<div class="details">				
+				<h2>Man Bags</h2>
+				<div class="details--hover">
+					<div class="details--photo">
+						<a href="">
+							<img src="./img/product-3.jpg" alt="">
+						</a>
+					</div>
+					<a href="" class="arrow">перейти к покупкам</a>
+				</div>
+			</div>
+		</section>
+		<section class="chessboard__row">
+			<div class="background">
+				<img src="./img/gbg-1.jpg" alt="">
+			</div>
+			<div class="details">				
+				<h2>Man Accessories</h2>
+				<div class="details--hover">
+					<div class="details--photo">
+						<a href="">
+							<img src="./img/product-1.jpg" alt="">
+						</a>
+					</div>
+					<a href="" class="arrow">перейти к покупкам</a>
+				</div>
+			</div>
+		</section>
+	</article>	
+
+
+{% endblock %}

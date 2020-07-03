@@ -1,0 +1,80 @@
+---
+title: Index page,
+class: 'account'
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	{# variable example #}
+	
+	<h2>Account</h2>
+
+	<nav class="account__nav">
+		<a href="">orders</a>
+		<a href="" class="current">Addresses</a>
+		<a href="">ACCOUNT DETAILS</a>
+		<a href="">wishlist</a>
+	</nav>
+
+	<h3 class="address--title">Billing Address</h3>
+
+	<article class="account__form">
+		<form action="">
+			<div class="form-control required">
+				<input type="text" name="">
+				<label>First name</label>
+				<span class="error-msg">Error text</span>
+			</div>
+			<div class="form-control required">
+				<input type="text" name="">
+				<label>Last name</label>
+				<span class="error-msg">Error text</span>
+			</div>
+			<div class="form-control required">
+				<input type="tel" name="">
+				<label>Your Phone</label>
+				<span class="error-msg">Error text</span>
+			</div>
+			<div class="form-control">
+				<input type="text" name="">
+				<label>Company name</label>
+				<span class="error-msg">Error text</span>
+			</div>
+			<div class="form-control required">
+				<input type="text" name="">
+				<label>Country</label>
+				<span class="error-msg">Error text</span>
+			</div>
+			<div class="form-control required">
+				<input type="text" name="">
+				<label>Street Address</label>
+				<span class="error-msg">Error text</span>
+			</div>
+			<div class="form-control required">
+				<input type="text" name="">
+				<label>Appartment, suite, office</label>
+				<span class="error-msg">Error text</span>
+			</div>
+			<div class="form-control required">
+				<input type="text" name="">
+				<label>Town/City</label>
+				<span class="error-msg">Error text</span>
+			</div>
+			<div class="form-control required">
+				<input type="text" name="">
+				<label>Post Code/ZIP</label>
+				<span class="error-msg">Error text</span>
+			</div>
+			<div class="form-submit">
+				<button class="btn">
+					<span>SAVE CHANGES</span>
+				</button>
+			</div>
+		</form>
+	</article>
+		
+	
+
+
+{% endblock %}

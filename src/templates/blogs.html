@@ -1,0 +1,48 @@
+---
+title: Index page,
+class: 'blogs'
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	{# variable example #}
+	
+	<h1>Our Blog</h1>
+
+	<article class="blogs__list">
+
+		{% for i in range(1, 5) %}
+		<section class="blogs__list_blog">
+			<time>02.07.2020</time>
+			<div class="blog--photo">
+				<a href="">
+					<img class="m" src="./img/slider-{{i}}.jpg" alt="">
+					<img class="p" src="./img/article-1.jpg" alt="">
+				</a>				
+			</div>
+			<div class="blog--title">
+				<h4>
+					<a href="">Leandra Medins Shoe’s Collection for Net-a-Porter Exlusive Modern Trends</a>
+				</h4>
+				<a href="" class="arrow">READ MORE</a>
+			</div>
+		</section>
+		{% endfor %}
+	</article>
+
+	<div class="pagination">
+		<a href="" class="pagination__prev"></a>
+		<div class="pagination__list">
+			<a href="" class="current">1</a>
+			<a href="">2</a>
+			<a href="">3</a>
+			<a href="">4</a>
+			<span></span>
+			<a href="">10</a>
+		</div>
+		<a href="" class="pagination__next"></a>
+	</div>
+
+
+{% endblock %}

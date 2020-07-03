@@ -6,9 +6,32 @@ PageList:
 - file: card-product.html
   ready: 90
 - file: womens-сlothing.html
+  ready: 90
+- file: women.html
+  ready: 90
+- file: man.html
+  ready: 90
+- file: brands.html
+  ready: 90
+- file: account_wishlist.html
+  ready: 90
+- file: account_details.html 
+  ready: 90
+- file: account_addresses_form.html
+  ready: 90
+- file: account_addresses_list.html
+  ready: 90
+- file: account_orders.html
+  ready: 90
+- file: account_login_form.html
+  ready: 90
+- file: about.html
   ready: 10
-
-  
-  
-
-  
+- file: blogs.html
+  ready: 10   
+- file: article.html
+  ready: 10 
+- file: contacts.html
+  ready: 10
+- file: card_product_lookbook.html
+  ready: 10 

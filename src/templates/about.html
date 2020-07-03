@@ -1,0 +1,45 @@
+---
+title: Index page,
+class: 'about'
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	{# variable example #}
+	
+	<h1>About Us</h1>
+
+	<div class="about__hero">
+		<img src="./img/bg-about.jpg" alt="">
+	</div>
+	<article class="about__article">
+		<section class="about__article_arrow">of haute couture, every item of which is a work of art</section>
+		<section class="about__article_dubble">
+			<div class="photo">
+				<img src="./img/product-1.jpg" alt="">
+			</div>
+			<div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+		</section>
+	</article>
+
+	<article class="chessboard community">
+		<section class="chessboard__row">
+			<div class="background">
+				<img src="./img/gbg-2.jpg" alt="">
+			</div>
+			<div class="details">
+				<h2>Conect to Lookbook Viber Community</h2>
+				<a href="" class="btn-viber">
+					<img src="./img/icon_joinviber.svg" alt="">
+					<img src="./img/icon_joinviber_fill.svg" class="hover" alt="">
+					<span>Join us on Viber</span>
+				</a>
+			</div>
+		</section>
+	</article>
+		
+	
+
+
+{% endblock %}

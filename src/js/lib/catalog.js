@@ -48,7 +48,7 @@ export default class Catalog {
                     document.querySelector('.catalog__filter_list .active').classList.remove('active');              
                     if (!current) {
                       gsap.set(target, {display: 'block' });
-                      gsap.to(el.querySelector('i'), {duration: 0.3, rotation: -45, scale: 1.2})
+                      gsap.to(el.querySelector('i'), {duration: 0.3, rotation: 180, scale: 1.2})
                       gsap.from(target, {duration: 0.3,
                         height: 0, opacity: 0, onComplete: function () {
                           target.classList.add('active');

@@ -1,0 +1,66 @@
+---
+title: Index page,
+class: 'account'
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	{# variable example #}
+	
+	<h2>Account</h2>
+
+	<nav class="account__nav">
+		<a href="">orders</a>
+		<a href="">Addresses</a>
+		<a href="" class="current">ACCOUNT DETAILS</a>
+		<a href="">wishlist</a>
+	</nav>
+
+	<article class="account__form">
+		<form action="">
+			<div class="form-control">
+				<input type="text" name="">
+				<label>First name</label>
+				<span class="error-msg">Error text</span>
+			</div>
+			<div class="form-control error">
+				<input type="text" name="">
+				<label>Last name</label>
+				<span class="error-msg">Error text</span>
+			</div>
+			<div class="form-control">
+				<input type="email" name="">
+				<label>Your email</label>
+				<span class="error-msg">Error text</span>
+			</div>
+			<div class="form-control">
+				<input type="password" name="">
+				<label>Current password</label>
+				<span class="error-msg">Error text</span>
+			</div>
+			<div class="form-control">
+				<input type="password" name="">
+				<label>New password</label>
+				<span class="error-msg">Error text</span>
+			</div>
+			<div class="form-control">
+				<input type="password" name="">
+				<label>Confirm new password</label>
+				<span class="error-msg">Error text</span>
+			</div>
+			<div class="form-submit">
+				<button class="btn">
+					<span>SAVE CHANGES</span>
+				</button>
+			</div>
+		</form>
+		<div class="logout">
+			<a href="" class="arrow">LOGOUT</a>
+		</div>
+	</article>
+		
+	
+
+
+{% endblock %}

@@ -1,0 +1,47 @@
+---
+title: Index page,
+class: 'account'
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	{# variable example #}
+	
+	<h2>Account</h2>
+
+	<nav class="account__nav">
+		<a href="">orders</a>
+		<a href="" class="current">Addresses</a>
+		<a href="">ACCOUNT DETAILS</a>
+		<a href="">wishlist</a>
+	</nav>
+
+
+	<article class="address__list">
+		<section>
+			<h3>Billing Address</h3>
+			<div class="address--details">
+				<p>Sergey Churilov</p>
+				<p>Pankivska St., #17, 81</p>
+				<p>01001 Kyiv</p>
+				<p>Ukraine</p>
+			</div>
+			<a href="" class="arrow">EDIT</a>
+		</section>
+		<section>
+			<h3>Shipping Address</h3>
+			<div class="address--details">
+				<p>Sergey Churilov</p>
+				<p>Mukilsko-Botanicha St., 23, 101</p>
+				<p>01001 Kyiv</p>
+				<p>Ukraine</p>
+			</div>
+			<a href="" class="arrow">EDIT</a>
+		</section>
+	</article>
+		
+	
+
+
+{% endblock %}

@@ -33,14 +33,14 @@ main.home {
         
       }
     }
-  }
-  .chessboard {
-    margin-top: 100px;
-    &.community {
-      margin-top: 120px;
-      .btn-viber {
-        margin-top: 50px;
-      }
+  }  
+}
+.chessboard {
+  margin-top: 100px;
+  &.community {
+    margin-top: 120px;
+    .btn-viber {
+      margin-top: 50px;
     }
   }
 }

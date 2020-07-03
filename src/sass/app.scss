@@ -193,7 +193,7 @@ a {
     padding-bottom: 14px;
     &:hover {
       &::before {
-        left: 100%;
+        left: 30%;
         opacity: 0;
         transition: all 400ms ease-in;
       }
@@ -254,7 +254,7 @@ a {
 	}
 }
 
-.chessboard {  
+.chessboard {
   .chessboard__row {
     display: flex;
     margin-bottom: 100px;
@@ -427,6 +427,19 @@ a {
       }
       a {
         align-self: center;
+      }
+    }
+  }
+  &.brands {    
+    .chessboard__row {
+      .details {
+        h2 {
+          text-transform: uppercase;
+          margin-bottom: 30px;
+        }
+      }
+      .background {
+        height: calc((50vw / 100) * 34);
       }
     }
   }
@@ -852,5 +865,149 @@ a {
       &::after {
         opacity: 1;
       }
+  }
+}
+
+.category {
+  h1 {
+    text-align: center;
+    margin-bottom: 90px;
+  }
+}
+
+.form-control {
+  height: 65px;
+  padding-top: 15px;
+  position: relative;
+  font: 300 18px/1 $Futura;
+  color: #141414;
+  &.filled {
+    input {
+      border-color: #141414!important;
+    }
+  }
+  &.error {
+    input {
+      border-color: #e95c40;
+    }
+    .error-msg {
+      opacity: 1;
+    }
+  }
+  &.required {   
+    label {   
+      &::after {
+        content: "*";
+      }
+    }
+  }
+  input {
+    width: 100%;
+    height: 100%;    
+    border-bottom: 1px solid #b8b8b8;    
+    font: 300 18px/1 $Futura;
+    color: #141414;
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
+    transition: border-color 400ms ease;
+    &:not(:focus):hover {
+      border-color: #eaeaea;
+      &+label {
+        color: #999999;
+        transform: translateX(16px);
+      }
+    }
+  }
+  textarea {
+    width: 100%;
+    height: 100%;
+    border: none;
+    resize: none;
+    border-bottom: 1px solid #b8b8b8;    
+    font: 300 18px/1 $Futura;
+    color: #141414;
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
+    transition: border-color 400ms ease;
+    padding-top: 16px;
+    transition: all 400ms ease;
+    &:focus {
+      height: 85px;
+    }
+    &:not(:focus):hover {
+      border-color: #eaeaea;
+      &+label {
+        color: #999999;
+        transform: translateX(16px);
+      }
+    }
+  }
+  label {
+    position: absolute;
+    left: 0;
+    bottom: 16px;
+    z-index: 0;
+    transition: color 400ms ease, transform 400ms ease;
+  }
+  .error-msg {
+    position: absolute;
+    left: 0;
+    bottom: -22px;
+    opacity: 0;
+    color: #e95c40;
+    transition: opacity 400ms ease;
+  }
+}
+
+.tabs {
+  margin-left: auto;
+  margin-right: auto;
+  .tabs__nav {
+    display: flex;
+    font: 500 14px/1 $Futura;
+    text-transform: uppercase;
+    border-bottom: 1px solid #141414;
+    li {
+      width: 50%;
+      height: 50px;
+      flex-shrink: 0;
+      &.current {
+        a {
+          pointer-events: none;
+          &::before {
+            opacity: 1;
+          }
+        }
+      }
+      a {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        &::before {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 8px;
+          background-color: #141414;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          opacity: 0;
+        }
+      }
+    }
+  }
+  .tabs__body {
+    li {
+      display: none;
+      &.current {
+        display: block;
+      }
+    }
   }
 }
