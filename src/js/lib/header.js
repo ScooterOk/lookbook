@@ -1,9 +1,10 @@
 import { gsap } from "gsap";
 export default class header {
-    constructor() {
+    constructor(app) {
         this.searchActive = false;
         this.cartActive = false;
         this.cartTransition = false;
+        this.app = app;
     }
     init() {
         this.langSelect();

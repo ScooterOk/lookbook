@@ -1,0 +1,228 @@
+---
+title: Index page,
+class: 'сheckout'
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	<div class="сheckout__steps">
+		<b>1. MY BAG</b>
+		<span>2. Delivery & Payment</span>
+		<span>3. cONFIRM</span>
+	</div>
+
+	<article class="сheckout__lookbook">
+		<div class="сheckout__form">
+			
+			<form action="">
+				<section class="form--section">
+					<h5>Contact Information</h5>
+					<div class="form-control required">
+						<input type="text" name="">
+						<label>First name</label>
+						<span class="error-msg">Error text</span>
+					</div>
+					<div class="form-control required">
+						<input type="text" name="">
+						<label>Last name</label>
+						<span class="error-msg">Error text</span>
+					</div>
+					<div class="form-control required">
+						<input type="text" name="">
+						<label>Phone</label>
+						<span class="error-msg">Error text</span>
+					</div>
+					<div class="form-control required">
+						<input type="email" name="">
+						<label>E-mail</label>
+						<span class="error-msg">Error text</span>
+					</div>
+					<div class="form-control required">
+						<input type="text" name="">
+						<label>Country</label>
+						<span class="error-msg">Error text</span>
+					</div>
+
+
+				{% set list = [
+    {
+        "city": "Kiev", 
+        "admin": "Kyyiv, Misto", 
+        "country": "Ukraine", 
+        "population_proper": "1662508", 
+        "iso2": "UA", 
+        "capital": "primary", 
+        "lat": "50.433333", 
+        "lng": "30.516667", 
+        "population": "2709000"
+    }, 
+    {
+        "city": "Kharkiv", 
+        "admin": "Kharkivs\u2019ka Oblast\u2019", 
+        "country": "Ukraine", 
+        "population_proper": "1215127", 
+        "iso2": "UA", 
+        "capital": "admin", 
+        "lat": "49.980814", 
+        "lng": "36.252718", 
+        "population": "1461000"
+    }, 
+    {
+        "city": "Dnipro", 
+        "admin": "Dnipropetrovs\u2019ka Oblast\u2019", 
+        "country": "Ukraine", 
+        "population_proper": "848849", 
+        "iso2": "UA", 
+        "capital": "admin", 
+        "lat": "48.459298", 
+        "lng": "35.038648", 
+        "population": "1050000"
+    }, 
+    {
+        "city": "Odesa", 
+        "admin": "Odes\u2019ka Oblast\u2019", 
+        "country": "Ukraine", 
+        "population_proper": "704001", 
+        "iso2": "UA", 
+        "capital": "admin", 
+        "lat": "46.463934", 
+        "lng": "30.738551", 
+        "population": "991000"
+    }, 
+    {
+        "city": "Donets\u2019k", 
+        "admin": "Donets\u2019ka Oblast\u2019", 
+        "country": "Ukraine", 
+        "population_proper": "760275", 
+        "iso2": "UA", 
+        "capital": "admin", 
+        "lat": "47.991664", 
+        "lng": "37.775928", 
+        "population": "988000"
+    }, 
+    {
+        "city": "L\u2019viv", 
+        "admin": "L\u2019vivs\u2019ka Oblast\u2019", 
+        "country": "Ukraine", 
+        "population_proper": "717803", 
+        "iso2": "UA", 
+        "capital": "admin", 
+        "lat": "49.840661", 
+        "lng": "24.030451", 
+        "population": "803880"
+    }, 
+    {
+        "city": "Zaporizhzhya", 
+        "admin": "Zaporiz\u2019ka Oblast\u2019", 
+        "country": "Ukraine", 
+        "population_proper": "413557", 
+        "iso2": "UA", 
+        "capital": "admin", 
+        "lat": "47.822892", 
+        "lng": "35.190314", 
+        "population": "788000"
+    }
+] %}
+					<div class="form-control">
+						<select>
+
+							{% for city in list %}
+							<option value="{{city.city}}">{{city.city}}</option>
+							{% endfor %}
+
+						</select>
+					</div>
+					<div class="form-control required">
+						<input type="text" name="">
+						<label>Street</label>
+						<span class="error-msg">Error text</span>
+					</div>
+					<div class="dubble">
+						<div class="form-control required">
+							<input type="text" name="">
+							<label>№ hous</label>
+							<span class="error-msg">Error text</span>
+						</div>
+						<div class="form-control required">
+							<input type="text" name="">
+							<label>№ appartment</label>
+							<span class="error-msg">Error text</span>
+						</div>
+					</div>
+				</section>
+
+				<section class="form--section shipping">
+					<h5>Choose A Shipping Type</h5>
+					<div class="сheckout__radio">
+						<label class="custom-radio">
+							<input type="radio" name="departament" value="pickup">
+							<span>Pickup</span>
+						</label>
+						<div class="hint">Заказ забирается по адресу магазина</div>
+					</div>
+					<div class="сheckout__radio">
+						<label class="custom-radio">
+							<input type="radio" name="departament" value="courier">
+							<span>Nova Poshta by Courier</span>
+						</label>
+						<div class="hint">Срок доставки этого товара составляет до 14 дней </div>
+					</div>
+					<div class="сheckout__radio">
+						<label class="custom-radio">
+							<input type="radio" name="departament" value="departament">
+							<span>Nova Poshta on Department</span>
+						</label>
+						<div class="hint">Срок доставки этого товара составляет до 14 дней</div>
+					</div>
+					<div class="form-control" id="nova-poshta-department">
+						<select>
+							<option value="">Department 1</option>
+							<option value="">Department 2</option>
+							<option value="">Department 3</option>
+							<option value="">Department 4</option>
+							<option value="">Department 5</option>
+						</select>
+					</div>
+				</section>
+
+				<section class="form--section payment">
+					<h5>Choose A Payment Type </h5>
+					<div class="сheckout__radio">
+						<label class="custom-radio">
+							<input type="radio" name="payment">
+							<span>Bank Card</span>
+						</label>
+						<div class="hint">Оплата картой на сайте</div>
+					</div>
+					<div class="сheckout__radio">
+						<label class="custom-radio">
+							<input type="radio" name="payment">
+							<span>Cash</span>
+						</label>
+						<div class="hint">Отплата наличными при получении товара</div>
+					</div>
+					<div class="form-control">
+						<textarea type="text" name=""></textarea>
+						<label>Notes about your order</label>
+						<span class="error-msg">Error text</span>
+					</div>
+				</section>
+			</form>			
+
+		</div>
+		<aside class="сheckout__total">
+			<div class="amount">amount of products: 2</div>	
+			<div class="total">TOTAL:  39 200 UAH</div>
+			<a href="" class="btn">
+				<span>CHECKOUT</span>
+			</a>
+		</aside>
+	</article>
+
+	<div class="сheckout__back">
+		<a href="" class="arrow">BAck to shopping</a>
+	</div>
+	
+	
+{% endblock %}

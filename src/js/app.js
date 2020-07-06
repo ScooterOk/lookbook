@@ -16,9 +16,11 @@ gsap.registerPlugin(ScrollToPlugin);
 
 
 const app = {
-  mode: 'descktop'
+  mode: 'descktop',
+  touch: false
 }
 
+console.log(app);
 
 function appInit() {
   window.scrollTo(0, 0);
@@ -52,7 +54,44 @@ function appInit() {
 
 
   // Header init
-  new Header().init();
+  new Header(app).init();
+
+  window.addEventListener('resize', function(e){    
+    setTimeout(function(){      
+      if(window.innerWidth <= 1024) {
+        app.mode = 'mobile';
+      }
+      if(window.innerWidth > 1024) {
+        app.mode = 'descktop';
+      }
+    }, 100);
+  });    
+  window.addEventListener('orientationchange', function(e){
+    setTimeout(function(){
+      if(window.innerWidth <= 1024) {
+        app.mode = 'mobile';
+      }
+      if(window.innerWidth > 1024) {
+        app.mode = 'descktop';
+      }
+    }, 100);
+  });
+  window.addEventListener('deviceorientation', function(e){
+    setTimeout(function(){
+      if(window.innerWidth <= 1024) {
+        app.mode = 'mobile';
+      }
+      if(window.innerWidth > 1024) {
+        app.mode = 'descktop';
+      }
+    }, 100);
+  });    
+  // *End* //
+  // Touch //
+  document.addEventListener('touchstart', function(e){
+    if(!app.touch)app.touch = true;
+  });
+  // *End* //
 
   
   document.querySelector('#gotop').addEventListener('click', function(e){

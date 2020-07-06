@@ -15,6 +15,9 @@
     <!-- HEADER -->
     <header>
       <div class="header__wrapper">
+        <button class="header__btn_open">
+          <i></i>
+        </button>
         <section class="header__nav">
           <div class="header__sub">
             <a href="" class="header__sub_link current">
@@ -115,8 +118,15 @@
               </ul>
             </div>
           </div>
+          <a href="" class="header__mobile_link">ABOUT US</a>
+          <a href="" class="header__mobile_link">OUR BLOG</a>
+          <a href="" class="header__mobile_link">CONTACTS</a>
         </section>
         <a href="./" class="header__logo">Lookbook</a>
+        <div class="header__mobile_head">
+          <button class="header__btn_close"></button>
+          <span>MENU</span>
+        </div>
         <section class="header__options">
           <div class="search">
             <button class="icon icon-search" data-action="toggleSearch">
@@ -132,10 +142,12 @@
             </section>
           </div>
           <a href="" class="icon">
+            <span>ACCOUNT</span>
             <img src="./img/icon_account.svg" alt="">
             <img src="./img/icon_account_fill.svg" class="hover" alt="">
           </a>
           <a href="" class="icon">
+            <span>WISHLIST</span>
             <img src="./img/icon_wish.svg" alt="">
             <img src="./img/icon_wish_fill.svg" class="hover" alt="">
           </a>
@@ -197,239 +209,139 @@
       </div>
     </header>
     <!-- BEGIN content -->
-    <main class="card">
-      <div class="breadcrumbs">
-        <a href="">WOMEN</a>
-        <a href="">Clothing</a>
-        <span>JACKET LOUIS VUITTON</span>
+    <main class="сheckout">
+      <div class="сheckout__steps">
+        <b>1. MY BAG</b>
+        <span>2. Delivery & Payment</span>
+        <span>3. cONFIRM</span>
       </div>
-      <h2>Jacket LOUIS VUITTON</h2>
-      <article class="card__article">
-        <a href="" class="favorites">
-          <!-- if favorites active, add class "active" -->
-          <img src="./img/icon_wish.svg" alt="">
-          <img src="./img/icon_wish_fill.svg" class="hover" alt="">
-        </a>
-        <section class="card__article_photo">
-          <ul>
-            <li>
-              <img src="./img/jacket-1.jpg" alt="">
-            </li>
-            <li>
-              <img src="./img/jacket-2.jpg" alt="">
-            </li>
-            <li>
-              <img src="./img/jacket-1.jpg" alt="">
-            </li>
-          </ul>
-        </section>
-        <section class="card__article_details">
-          <div class="article">#934156</div>
-          <div class="price">
-            <b>2 000</b>
-            <span>usd</span>
-          </div>
-          <div class="description">
-            <a href="" data-link="description">DESCRIPTION</a>
-          </div>
-          <div class="size">
-            <span>Size:</span>
-            <label class="size-radio">
-              <input type="radio" name="size">
-              <span>S</span>
-            </label>
-            <label class="size-radio">
-              <input type="radio" name="size">
-              <span>M</span>
-            </label>
-            <label class="size-radio">
-              <input type="radio" name="size">
-              <span>L</span>
-            </label>
-            <label class="size-radio">
-              <input type="radio" name="size">
-              <span>XL</span>
-            </label>
-          </div>
-          <div class="buy">
-            <button class="btn">
-              <span>BUY</span>
-            </button>
-          </div>
-          <div class="question">
-            <span>ASK A QUESTION:</span>
-            <a href="">
-              <img src="./img/card_viber.svg" alt="">
-            </a>
-            <a href="">
-              <img src="./img/card_whatsapp.svg" alt="">
-            </a>
-            <a href="">
-              <img src="./img/card_telegram.svg" alt="">
-            </a>
-          </div>
-          <div class="phone">
-            <a href="tel:+380669565585">+38(066)9565585</a>
-          </div>
-        </section>
-      </article>
-      <article class="card__description">
-        <h2>Description</h2>
-        <div class="description--details">
-          <p>This vegan leather shirt dress provides a bold style with its three-quarter sleeves and straight fit. This vegan leather shirt dress provides a bold style with its three-quarter sleeves and straight fit.</p>
-          <p></p>
-          <p>Base: 85% viscose, 15% polyester</p>
+      <article class="сheckout__lookbook">
+        <div class="сheckout__form">
+          <form action="">
+            <section class="form--section">
+              <h5>Contact Information</h5>
+              <div class="form-control required">
+                <input type="text" name="">
+                <label>First name</label>
+                <span class="error-msg">Error text</span>
+              </div>
+              <div class="form-control required">
+                <input type="text" name="">
+                <label>Last name</label>
+                <span class="error-msg">Error text</span>
+              </div>
+              <div class="form-control required">
+                <input type="text" name="">
+                <label>Phone</label>
+                <span class="error-msg">Error text</span>
+              </div>
+              <div class="form-control required">
+                <input type="email" name="">
+                <label>E-mail</label>
+                <span class="error-msg">Error text</span>
+              </div>
+              <div class="form-control required">
+                <input type="text" name="">
+                <label>Country</label>
+                <span class="error-msg">Error text</span>
+              </div>
+              <div class="form-control">
+                <select>
+                  <option value="Kiev">Kiev</option>
+                  <option value="Kharkiv">Kharkiv</option>
+                  <option value="Dnipro">Dnipro</option>
+                  <option value="Odesa">Odesa</option>
+                  <option value="Donetsu2019k">Donetsu2019k</option>
+                  <option value="Lu2019viv">Lu2019viv</option>
+                  <option value="Zaporizhzhya">Zaporizhzhya</option>
+                </select>
+              </div>
+              <div class="form-control required">
+                <input type="text" name="">
+                <label>Street</label>
+                <span class="error-msg">Error text</span>
+              </div>
+              <div class="dubble">
+                <div class="form-control required">
+                  <input type="text" name="">
+                  <label>№ hous</label>
+                  <span class="error-msg">Error text</span>
+                </div>
+                <div class="form-control required">
+                  <input type="text" name="">
+                  <label>№ appartment</label>
+                  <span class="error-msg">Error text</span>
+                </div>
+              </div>
+            </section>
+            <section class="form--section shipping">
+              <h5>Choose A Shipping Type</h5>
+              <div class="сheckout__radio">
+                <label class="custom-radio">
+                  <input type="radio" name="departament" value="pickup">
+                  <span>Pickup</span>
+                </label>
+                <div class="hint">Заказ забирается по адресу магазина</div>
+              </div>
+              <div class="сheckout__radio">
+                <label class="custom-radio">
+                  <input type="radio" name="departament" value="courier">
+                  <span>Nova Poshta by Courier</span>
+                </label>
+                <div class="hint">Срок доставки этого товара составляет до 14 дней </div>
+              </div>
+              <div class="сheckout__radio">
+                <label class="custom-radio">
+                  <input type="radio" name="departament" value="departament">
+                  <span>Nova Poshta on Department</span>
+                </label>
+                <div class="hint">Срок доставки этого товара составляет до 14 дней</div>
+              </div>
+              <div class="form-control" id="nova-poshta-department">
+                <select>
+                  <option value="">Department 1</option>
+                  <option value="">Department 2</option>
+                  <option value="">Department 3</option>
+                  <option value="">Department 4</option>
+                  <option value="">Department 5</option>
+                </select>
+              </div>
+            </section>
+            <section class="form--section payment">
+              <h5>Choose A Payment Type </h5>
+              <div class="сheckout__radio">
+                <label class="custom-radio">
+                  <input type="radio" name="payment">
+                  <span>Bank Card</span>
+                </label>
+                <div class="hint">Оплата картой на сайте</div>
+              </div>
+              <div class="сheckout__radio">
+                <label class="custom-radio">
+                  <input type="radio" name="payment">
+                  <span>Cash</span>
+                </label>
+                <div class="hint">Отплата наличными при получении товара</div>
+              </div>
+              <div class="form-control">
+                <textarea type="text" name=""></textarea>
+                <label>Notes about your order</label>
+                <span class="error-msg">Error text</span>
+              </div>
+            </section>
+          </form>
         </div>
+        <aside class="сheckout__total">
+          <div class="amount">amount of products: 2</div>
+          <div class="total">TOTAL: 39 200 UAH</div>
+          <a href="" class="btn">
+            <span>CHECKOUT</span>
+          </a>
+        </aside>
       </article>
-      <article class="slider card">
-        <h2>Recently Viewed</h2>
-        <!-- Slider main container -->
-        <div class="swiper-container">
-          <!-- Additional required wrapper -->
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="slide__photo">
-                <a href="">
-                  <img src="./img/jacket-1.jpg" alt="">
-                </a>
-              </div>
-              <h5>
-                <a href="">Heritage Sea Storm print jacket GUCCI</a>
-                <a href="" class="favorites">
-                  <img src="./img/icon_wish.svg" alt="">
-                  <img src="./img/icon_wish_fill.svg" class="hover" alt="">
-                </a>
-              </h5>
-              <div class="price">15 600 uaH</div>
-            </div>
-            <div class="swiper-slide">
-              <div class="slide__photo">
-                <a href="">
-                  <img src="./img/product-1.jpg" alt="">
-                </a>
-              </div>
-              <h5>
-                <a href="">Heritage Sea Storm print jacket GUCCI</a>
-                <a href="" class="favorites">
-                  <img src="./img/icon_wish.svg" alt="">
-                  <img src="./img/icon_wish_fill.svg" class="hover" alt="">
-                </a>
-              </h5>
-              <div class="price">15 600 uaH</div>
-            </div>
-            <div class="swiper-slide">
-              <div class="slide__photo">
-                <a href="">
-                  <img src="./img/jacket-2.jpg" alt="">
-                </a>
-              </div>
-              <h5>
-                <a href="">Heritage Sea Storm print jacket GUCCI</a>
-                <a href="" class="favorites active">
-                  <img src="./img/icon_wish.svg" alt="">
-                  <img src="./img/icon_wish_fill.svg" class="hover" alt="">
-                </a>
-              </h5>
-              <div class="price">15 600 uaH</div>
-            </div>
-            <div class="swiper-slide">
-              <div class="slide__photo">
-                <a href="">
-                  <img src="./img/jacket-1.jpg" alt="">
-                </a>
-              </div>
-              <h5>
-                <a href="">Heritage Sea Storm print jacket GUCCI</a>
-                <a href="" class="favorites">
-                  <img src="./img/icon_wish.svg" alt="">
-                  <img src="./img/icon_wish_fill.svg" class="hover" alt="">
-                </a>
-              </h5>
-              <div class="price">15 600 uaH</div>
-            </div>
-            <div class="swiper-slide">
-              <div class="slide__photo">
-                <a href="">
-                  <img src="./img/product-1.jpg" alt="">
-                </a>
-              </div>
-              <h5>
-                <a href="">Heritage Sea Storm print jacket GUCCI</a>
-                <a href="" class="favorites">
-                  <img src="./img/icon_wish.svg" alt="">
-                  <img src="./img/icon_wish_fill.svg" class="hover" alt="">
-                </a>
-              </h5>
-              <div class="price">15 600 uaH</div>
-            </div>
-            <div class="swiper-slide">
-              <div class="slide__photo">
-                <a href="">
-                  <img src="./img/jacket-2.jpg" alt="">
-                </a>
-              </div>
-              <h5>
-                <a href="">Heritage Sea Storm print jacket GUCCI</a>
-                <a href="" class="favorites">
-                  <img src="./img/icon_wish.svg" alt="">
-                  <img src="./img/icon_wish_fill.svg" class="hover" alt="">
-                </a>
-              </h5>
-              <div class="price">15 600 uaH</div>
-            </div>
-            <div class="swiper-slide">
-              <div class="slide__photo">
-                <a href="">
-                  <img src="./img/jacket-1.jpg" alt="">
-                </a>
-              </div>
-              <h5>
-                <a href="">Heritage Sea Storm print jacket GUCCI</a>
-                <a href="" class="favorites">
-                  <img src="./img/icon_wish.svg" alt="">
-                  <img src="./img/icon_wish_fill.svg" class="hover" alt="">
-                </a>
-              </h5>
-              <div class="price">15 600 uaH</div>
-            </div>
-            <div class="swiper-slide">
-              <div class="slide__photo">
-                <a href="">
-                  <img src="./img/product-1.jpg" alt="">
-                </a>
-              </div>
-              <h5>
-                <a href="">Heritage Sea Storm print jacket GUCCI</a>
-                <a href="" class="favorites">
-                  <img src="./img/icon_wish.svg" alt="">
-                  <img src="./img/icon_wish_fill.svg" class="hover" alt="">
-                </a>
-              </h5>
-              <div class="price">15 600 uaH</div>
-            </div>
-            <div class="swiper-slide">
-              <div class="slide__photo">
-                <a href="">
-                  <img src="./img/jacket-2.jpg" alt="">
-                </a>
-              </div>
-              <h5>
-                <a href="">Heritage Sea Storm print jacket GUCCI</a>
-                <a href="" class="favorites">
-                  <img src="./img/icon_wish.svg" alt="">
-                  <img src="./img/icon_wish_fill.svg" class="hover" alt="">
-                </a>
-              </h5>
-              <div class="price">15 600 uaH</div>
-            </div>
-          </div>
-          <!-- If we need pagination -->
-          <div class="swiper-pagination"></div>
-          <!-- If we need navigation buttons -->
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-        </div>
-      </article>
+      <div class="сheckout__back">
+        <a href="" class="arrow">BAck to shopping</a>
+      </div>
     </main>
     <!-- END content -->
     <!-- FOOTER -->

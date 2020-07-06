@@ -2,16 +2,29 @@ import { gsap } from "gsap";
 export default class Checkout {
     init() {
         this.fixedSide();
-        console.log('сheckout__lookbook_list')
+        document.querySelectorAll('[name="departament"').forEach(el => {
+            el.addEventListener('change', e => {
+                if(e.target.value == 'departament') {
+                    gsap.set('#nova-poshta-department', {display: 'block'});
+                }else{
+                    gsap.set('#nova-poshta-department', {display: 'none'});
+                }
+                console.log();
+            });
+        });
     };
 
     fixedSide() {
         let listAside = {
             offsetTop: document.querySelector('.сheckout__total').getBoundingClientRect().top - 120,
-            asideHeight: $('.сheckout__total').height(),
-            articleHeight: $('.сheckout__lookbook_list').height()
+            asideHeight: document.querySelector('.сheckout__total').clientHeight
         }
-        console.log(listAside);
+        if(document.querySelectorAll('.сheckout__lookbook_list').length) {
+            listAside.articleHeight = document.querySelector('.сheckout__lookbook_list').clientHeight;
+        }
+        if(document.querySelectorAll('.сheckout__form').length) {
+            listAside.articleHeight = document.querySelector('.сheckout__form').clientHeight;
+        }
         window.addEventListener('scroll', function(){
             let y = window.pageYOffset;
             let diff = listAside.offsetTop + (listAside.articleHeight - listAside.asideHeight);
@@ -26,10 +39,14 @@ export default class Checkout {
                 gsap.set(document.querySelector('.сheckout__total'), {marginTop: (listAside.articleHeight - listAside.asideHeight)});                
             }            
         });
-        window.addEventListener('resize', () => {
-            
+        window.addEventListener('resize', () => {            
             listAside.asideHeight = $('.сheckout__total').height();
-            listAside.articleHeight = $('.сheckout__lookbook_list').height();
+            if(document.querySelectorAll('.сheckout__lookbook_list').length) {
+                listAside.articleHeight = document.querySelector('.сheckout__lookbook_list').clientHeight;
+            }
+            if(document.querySelectorAll('.сheckout__form').length) {
+                listAside.articleHeight = document.querySelector('.сheckout__form').clientHeight;
+            }
         })
     }
 }
