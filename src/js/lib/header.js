@@ -14,6 +14,7 @@ export default class header {
     };
 
     langSelect() {
+        const that = this;
         let select = document.querySelector('#lang-select');
         let customSelect = document.createElement('div');
         let svg = '<i></i>'
@@ -44,12 +45,14 @@ export default class header {
         
         document.querySelector('header .header__options .lang').append(customSelect);
         
-        customSelect.addEventListener('mouseenter', function(e){    
+        customSelect.addEventListener('mouseenter', function(e){
+            if(that.app.mode === 'mobile')return;
             let list = this.querySelector('.lang-select__list');
             gsap.set(list, {display: 'block'});
             gsap.fromTo(list, {opacity: 0}, {duration: .3, opacity: 1});
         });
         customSelect.addEventListener('mouseleave', function(e){
+            if(that.app.mode === 'mobile')return;
             let list = this.querySelector('.lang-select__list');
             gsap.to(list, {duration: .3, opacity: 0, onComplete: function(){
                 gsap.set(list, {display: 'none'});
@@ -57,9 +60,10 @@ export default class header {
         });
         list.querySelectorAll('li').forEach(function(el, i){
             el.addEventListener('click', function(e){
-            let i = this.getAttribute('data-index');
-            select.selectedIndex = i;
-            select.dispatchEvent(new Event('change'));
+                let i = this.getAttribute('data-index');
+                select.selectedIndex = i;
+                select.dispatchEvent(new Event('change'));
+                console.log(select.value);
             });
         });
     };
@@ -71,27 +75,53 @@ export default class header {
             let subNav = el.querySelector('.header__sub_menu');
             let list = subNav.querySelector('ul');
             el.querySelector('.header__sub_link').addEventListener('mouseenter', function(e){
-                if(root.classList.contains('active') || that.searchActive) return;
-                root.classList.add('active');                
+                if(root.classList.contains('active') || that.searchActive || that.app.mode == 'mobile') return;
+                document.querySelector('.header__mobile_head .title span').innerText = 'menu';
+                root.classList.add('active');
                 gsap.timeline()
                     .fromTo(subNav, {y: '-110%'}, {duration: 1, y: '0%', ease: "power4.out"})
-                    .fromTo(list, {y: -50, opacity: 0}, {duration: 0.8, y: 0, opacity: 1, ease: "power1.out"}, '-=0.8')
-                    .add(function(){
-                        //gsap.killTweensOf(subNav);                        
-                    })                
+                    .fromTo(list, {y: -50, opacity: 0}, {duration: 0.8, y: 0, opacity: 1, ease: "power1.out"}, '-=0.8')                    
             });
-            el.addEventListener('mouseleave', function(e){
-                if(!root.classList.contains('active')) return;
+            el.addEventListener('mouseleave', function(e){                
+                if(!root.classList.contains('active') || that.app.mode == 'mobile') return;
+                document.querySelector('.header__mobile_head .title span').innerText = 'menu';
                 gsap.killTweensOf(subNav);
                 gsap.killTweensOf(list);
                 root.classList.remove('active');
                 gsap.timeline()
                     .to(list, {duration: 0.5, y: -25, opacity: 0, ease: "power1.in"})
                     .to(subNav, {duration: 0.5, y: '-110%', ease: "power1.in"}, '-=0.3')
-                    .add(function(){
-                        
-                    })
             });
+            el.querySelector('.header__sub_link').addEventListener('click', e => {
+                if(that.app.mode === 'mobile'){
+                    const title = e.currentTarget.querySelector('span').innerText;
+                    root.classList.add('active');
+                    gsap.timeline()
+                        .to('.header__mobile_head .title span', {duration: 0.5, y: '100%', ease: "power2.in"})
+                        .set('.header__mobile_head .title span', {y: '-100%'})
+                        .add(()=>{
+                            document.querySelector('.header__mobile_head .title span').innerText = title;
+                        })
+                        .to('.header__mobile_head .title span', {duration: 0.5, y: '0%', ease: "power2.out"})
+                        .fromTo(subNav, {y: '-110%'}, {duration: 1, y: '0%', ease: "power4.out"}, '-=1')
+                        .fromTo(['.header__sub--back', '.header__sub--all',list], {y: -50, opacity: 0}, {duration: 0.8, y: 0, opacity: 1, ease: "power1.out"}, '-=0.8')                
+                    e.preventDefault();
+                }                
+            });            
+            el.querySelector('.header__sub--back').addEventListener('click', e => {                
+                root.classList.remove('active');
+                gsap.timeline()
+                    .to('.header__mobile_head .title span', {duration: 0.5, y: '-100%', ease: "power2.in"})
+                    .set('.header__mobile_head .title span', {y: '100%'})
+                    .add(()=>{
+                        document.querySelector('.header__mobile_head .title span').innerText = 'menu';
+                    })
+                    .to('.header__mobile_head .title span', {duration: 0.5, y: '0%', ease: "power2.out"})
+                    .to(['.header__sub--back', '.header__sub--all',list], {duration: 0.5, y: -25, opacity: 0, ease: "power1.in"}, '-=1')
+                    .to(subNav, {duration: 0.5, y: '-110%', ease: "power1.in"}, '-=0.3')                
+                e.preventDefault();
+            });
+            
         });
     }
 

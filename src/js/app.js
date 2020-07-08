@@ -55,6 +55,12 @@ function appInit() {
 
   // Header init
   new Header(app).init();
+  if(window.innerWidth <= 1024) {
+    app.mode = 'mobile';
+  }
+  if(window.innerWidth > 1024) {
+    app.mode = 'descktop';
+  }
 
   window.addEventListener('resize', function(e){    
     setTimeout(function(){      
@@ -102,6 +108,7 @@ function appInit() {
   
 
   window.addEventListener('scroll', function(){
+    if(app.mode === 'mobile') return;
     const y = window.pageYOffset;
     if(y > 0) {
       document.querySelector('header').classList.add('small');

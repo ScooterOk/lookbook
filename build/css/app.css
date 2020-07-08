@@ -983,9 +983,7 @@ header .header__mobile_head {
   left: 0;
   height: 80px;
   border-bottom: 1px solid #efefef;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
@@ -996,9 +994,14 @@ header .header__mobile_head {
   font: 600 24px/1 "Cormorant SC";
   color: #292929;
   z-index: 1;
-  -webkit-transform: translateX(-100%);
-  -ms-transform: translateX(-100%);
-  transform: translateX(-100%);
+}
+
+header .header__mobile_head .title {
+  overflow: hidden;
+}
+
+header .header__mobile_head .title span {
+  display: inline-block;
 }
 
 header .header__nav {
@@ -1139,6 +1142,49 @@ header .header__nav .header__sub .header__sub_menu {
   -webkit-transition: padding 700ms ease;
   -o-transition: padding 700ms ease;
   transition: padding 700ms ease;
+}
+
+header .header__nav .header__sub .header__sub_menu .header__sub--back {
+  height: 60px;
+  display: none;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 14px;
+  margin: 0 25px;
+  font-family: "Futura PT";
+  text-transform: uppercase;
+  font-weight: 500;
+  line-height: 1;
+  color: #292929;
+  border-bottom: 1px solid #efefef;
+}
+
+header .header__nav .header__sub .header__sub_menu .header__sub--back::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 3px solid transparent;
+  border-right: 6px solid #292929;
+  border-bottom: 3px solid transparent;
+  margin-right: 12px;
+}
+
+header .header__nav .header__sub .header__sub_menu .header__sub--all {
+  height: 60px;
+  display: none;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 14px;
+  margin: 0 25px;
+  font-family: "Futura PT";
+  text-transform: uppercase;
+  font-weight: 500;
+  line-height: 1;
+  color: #292929;
+  border-bottom: 1px solid #efefef;
 }
 
 header .header__nav .header__sub .header__sub_menu ul {
@@ -1628,7 +1674,7 @@ header .lang-select .lang-select__list li {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  cursor: default;
+  cursor: pointer;
 }
 
 header .lang-select .lang-select__list li:hover span::before {
@@ -1709,6 +1755,11 @@ header.small .header__options .cart .cart__details .cart__details_title {
     display: -ms-flexbox;
     display: flex;
   }
+  header .header__mobile_head {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
   header .header__nav {
     width: 100%;
     padding: 95px 25px 0 25px;
@@ -1717,6 +1768,50 @@ header.small .header__options .cart .cart__details .cart__details_title {
     -ms-flex-direction: column;
     flex-direction: column;
     height: auto;
+  }
+  header .header__nav .header__sub .header__sub_menu {
+    bottom: 0;
+    z-index: 1;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  header .header__nav .header__sub .header__sub_menu .header__sub--back {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  header .header__nav .header__sub .header__sub_menu .header__sub--all {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  header .header__nav .header__sub .header__sub_menu ul {
+    border: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 0 25px;
+  }
+  header .header__nav .header__sub .header__sub_menu ul li {
+    margin: 0;
+    font-size: 14px;
+    width: 100%;
+    border-bottom: 1px solid #efefef;
+  }
+  header .header__nav .header__sub .header__sub_menu ul li a {
+    height: 60px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  header .header__nav .header__sub .header__sub_menu ul li a::after {
+    display: none;
   }
   header .header__nav .header__mobile_link {
     display: -webkit-box;
@@ -1800,11 +1895,16 @@ header.small .header__options .cart .cart__details .cart__details_title {
     position: absolute;
     top: 19px;
     right: 14px;
-    display: none;
+    z-index: 1;
+  }
+  header .header__options .search .search__from {
+    z-index: 1;
+    padding-top: 70px;
   }
   header .header__options .lang {
     width: 100%;
     margin: 0;
+    z-index: 0;
   }
   header .header__options .lang .lang-select {
     display: -webkit-box;
