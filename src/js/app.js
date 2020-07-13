@@ -95,7 +95,10 @@ function appInit() {
   // *End* //
   // Touch //
   document.addEventListener('touchstart', function(e){
-    if(!app.touch)app.touch = true;
+    if(!app.touch) {
+      app.touch = true;
+      document.body.classList.add('touch');
+    }
   });
   // *End* //
 

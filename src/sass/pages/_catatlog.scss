@@ -122,17 +122,26 @@ main.catalog {
   padding: 30px 0px 0 0px;
   .mobile--title {
     font-size: 16px;
+    font-family: $Futura;
+    padding-left: 26px;
+    padding-right: 26px;
     //color: $red;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     display: none;
-    .icon {
-      //fill: $red;
-      font-size: 8px;
-      transition: transform 300ms ease-in-out;
+    &::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 0;
+      border-left: 3px solid transparent;
+      border-right: 3px solid transparent;
+      border-top: 6px solid #292929;
+      margin-left: 9px;
+      transition: transform 400ms ease;
     }
     &.active {
-      .icon {
+      &::after {
         transform: scale(-1);
       }
     }
@@ -242,3 +251,74 @@ main.catalog {
     }
   }
 }
+
+
+
+
+
+
+@media screen and (max-width: 960px) {
+  .catalog__filter .mobile--title {
+    display: flex;
+  }
+  .catalog__filter .catalog__filter_nav {
+    display: none;		
+    flex-wrap: wrap;
+    padding: 20px 20px 0 20px;
+    overflow: hidden;
+    justify-content: flex-start;
+    &.show {
+      display: flex!important;
+    }
+    li {
+      width: 50%;
+      height: 40px;
+      cursor: default;
+      margin: 0;
+    }
+  }
+  .catalog__list {
+    padding: 40px 35px 0 35px!important;
+    .catalog__list_grid {
+      margin-right: 0;
+      justify-content: space-between;
+      li {
+        width: calc(50% - 15px);
+        margin-right: 0;
+        .grid--location {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+  .catalog__filter .catalog__filter_list .list--item ul {
+    padding-left: 26px;
+    padding-right: 26px;
+  }
+  .custom-checkbox input[type="checkbox"] + span {
+    text-overflow: unset;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .catalog__filter .catalog__filter_list .list--item ul li {
+    width: 33.333%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .catalog__list {
+    padding: 0 26px!important;
+    margin-right: 0!important;
+    .card {
+      width: 100%;
+      margin: 0 0 40px 0;
+      h5 {
+        margin-left: 0;
+      }
+      .card--price {
+        margin-left: 0;
+      }
+    }
+  }
+}
+

@@ -11,6 +11,7 @@ export default class header {
         this.sublinks();
         this.search();
         this.cart();
+        this.mobile();
     };
 
     langSelect() {
@@ -169,6 +170,7 @@ export default class header {
     cart() {
         let that = this;
         document.querySelector('[data-action="toggleCart"]').addEventListener('mouseenter', function(e){
+            if(that.app.touch || that.app.mode === 'mobile') return;
             if(!that.cartActive && !that.cartTransition) {
                 that.cartTransition = true;
                 this.classList.add('active');
@@ -193,5 +195,20 @@ export default class header {
                     })                    
             }
         });
+    }
+    mobile() {
+        document.querySelector('.header__btn_open').addEventListener('click', e => {
+            document.querySelector('header').classList.add('open');
+            setTimeout(()=>{
+                document.querySelector('header').classList.add('opened');
+            }, 700);            
+        });
+        document.querySelector('.header__btn_close').addEventListener('click', e => {            
+            document.querySelector('header').classList.remove('opened');
+            setTimeout(()=>{
+                document.querySelector('header').classList.remove('open');
+            }, 700);            
+        });
+        
     }
 }

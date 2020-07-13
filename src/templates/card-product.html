@@ -13,25 +13,42 @@ class: 'card'
 	</div>
 
 	<h2>Jacket LOUIS VUITTON</h2>
+
+	
+
 	<article class="card__article">		
 		<a href="" class="favorites">
 			<!-- if favorites active, add class "active" -->
 			<img src="./img/icon_wish.svg" alt="">
 			<img src="./img/icon_wish_fill.svg" class="hover" alt="">
 		</a>
+
+		
+
+
 		<section class="card__article_photo">
-			<ul>
-				<li>
-					<img src="./img/jacket-1.jpg" alt="">
-				</li>
-				<li>
-					<img src="./img/jacket-2.jpg" alt="">
-				</li>
-				<li>
-					<img src="./img/jacket-1.jpg" alt="">
-				</li>
-			</ul>
+			<!-- Slider main container -->
+			<div class="swiper-container card-photo-slider">
+				<!-- Additional required wrapper -->
+				<div class="swiper-wrapper">
+						<!-- Slides -->
+						<div class="swiper-slide">
+							<img src="./img/jacket-1.jpg" alt="">
+						</div>
+						<div class="swiper-slide">
+							<img src="./img/jacket-2.jpg" alt="">
+						</div>
+						<div class="swiper-slide">
+							<img src="./img/jacket-1.jpg" alt="">
+						</div>						
+				</div>
+				<!-- If we need pagination -->
+			<div class="swiper-pagination"></div>
+			</div>			
 		</section>
+
+
+
 		<section class="card__article_details">
 			<div class="article">#934156</div>
 			<div class="price">

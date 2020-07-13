@@ -150,3 +150,109 @@ footer {
     }
   }
 }
+
+
+@media screen and (max-width: 1200px) {
+  footer .wrapper section.subscribe {
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+  footer .wrapper section.copyright {
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  footer {
+    .wrapper {
+      flex-direction: column;
+      align-items: center;
+      flex-wrap: nowrap;
+      max-height: initial;
+      padding: 90px 70px;
+      section {
+        &.tel {
+          width: auto;
+          text-align: center;
+          order: 1;
+          h5 {
+            margin-bottom: 10px;
+          }
+          a {
+            margin-bottom: 10px;
+          }
+        }
+        &.subscribe {
+          width: auto;
+          margin-top: 40px;
+          margin-bottom: 0;
+          padding: 0;
+          order: 3;
+          h5 {
+            text-align: center;
+          }
+        }
+        &.social {
+          width: auto;
+          text-align: center;
+          margin-top: 40px;
+          order: 4;
+          h5 {
+            margin-bottom: 20px;
+          }
+        }
+        &.schedule {
+          width: auto;
+          margin-top: 40px;
+          text-align: center;
+          order: 2;
+        }
+        &.copyright {
+          width: auto;
+          margin-top: 40px;
+          padding-left: 0;
+          padding-right: 0;
+          flex-direction: column;
+          align-items: center;
+          order: 5;
+          span {
+            margin-bottom: 20px;
+          }
+        }
+        &.designby {
+          margin-top: 40px;
+          justify-content: center;
+          order: 6;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  footer {
+    .footer__toplinks {
+      justify-content: space-between;
+      padding: 0 20px;
+      height: 100px;
+      a {
+        margin: 0;
+      }
+    }
+    .wrapper {
+      padding: 40px 20px 50px 20px;
+    }
+  }
+  footer .wrapper section.subscribe .subscribe--form {
+    flex-direction: column;
+    align-items: center;
+  }
+  footer .wrapper section.subscribe .subscribe--form input {
+    width: 100%;
+    margin-right: 0;
+  }
+  footer .wrapper section.subscribe .subscribe--form .btn-reverse {
+    margin-top: 20px;
+  }
+}

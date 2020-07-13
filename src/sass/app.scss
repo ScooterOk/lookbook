@@ -1089,3 +1089,24 @@ a {
     }
   }
 }
+
+
+@media screen and (max-width: 576px) {
+  h1 {
+    font-size: 60px;
+    line-height: 1;
+  }
+  h2 {
+    font-size: 60px;
+    line-height: 1;
+  }
+  .pagination {
+    padding: 0 26px;
+    a {
+      width: 26px;
+    }
+    span {
+      width: 40px;
+    }
+  }
+}

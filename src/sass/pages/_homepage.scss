@@ -44,3 +44,176 @@ main.home {
     }
   }
 }
+
+
+@media screen and (max-width: 1200px) {
+  h1 {
+    font-size: 80px;
+    line-height: 70px;
+  }
+  main.home {
+    .home__hero {
+      .home__hero_details {
+        padding-left: 70px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  main {
+    padding-top: 80px!important;
+  }
+  main.home {    
+    .home__hero {
+      flex-direction: column;
+      height: auto;
+      .home__hero_photo {
+        width: 100%;
+      }
+      .home__hero_details {
+        width: 100%;
+        padding: 0 40px;
+        margin-top: -208px;
+        h1 {
+          width: 400px;
+          color: #fff;
+        }
+        p {
+          width: auto;
+          margin-bottom: 40px;
+        }
+      }
+    }
+  }
+  .chessboard {
+    &.community {
+      .chessboard__row {
+        .details {
+          margin-top: -233px;
+        }
+      }
+    }
+    .chessboard__row {
+      flex-direction: column;
+      align-items: center;
+      .background {
+        order: 1!important;
+        width: 100%!important;
+        height: calc((100vw / 100) * 126)!important;
+      }
+      .details {
+        order: 2!important;
+        width: 100%!important;
+        margin-top: calc(((100vw / 100) * (-100)));
+        padding-left: 100px!important;
+        padding-right: 100px!important;
+        h2 {
+          color: #fff;
+        }
+        .details--hover {
+          width: 100%!important;
+          margin-top: 90px;
+          text-align: center;
+          .details--photo {
+            width: 100%!important;
+            height: auto!important;
+            a {
+              padding-top: 140%;
+              img {
+                position: absolute!important;
+                top: 0;
+                left: 0;
+              }
+            }
+          }
+        }        
+      }
+    }
+  }
+  .slider {
+    .swiper-container {
+      .swiper-slide.swiper-slide-active {
+        padding-left: 40px!important;
+        padding-right: 40px!important;
+      }
+      .swiper-button-prev {
+        bottom: -92px;
+        top: auto!important;
+      }
+      .swiper-button-next {
+        bottom: -92px;
+        top: auto!important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {  
+  main.home .home__hero .home__hero_details {
+    padding: 0 26px;
+    margin-top: -174px;
+    h1 {
+      width: 320px;
+    }
+    p {
+      margin-top: 10px;
+      margin-bottom: 30px;
+      font-size: 18px;
+      width: 90%;
+    }
+  }
+  .chessboard {
+    margin-top: 70px;
+    .chessboard__row {
+      margin-bottom: 70px!important;
+      .details {
+        padding-left: 50px!important;
+        padding-right: 50px!important;
+        h2 {
+          font-size: 60px;
+          line-height: 1;
+        }
+        .details--hover {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+  .slider {
+    margin-top: 70px;
+    h2 {
+      font-size: 60px;
+      line-height: 1;
+    }
+    .swiper-container {
+      margin-top: 24px;
+      .swiper-slide.swiper-slide-active {
+        padding-left: 26px!important;
+        padding-right: 26px!important;
+      }
+      .swiper-slide {
+        h4 {
+          margin: 20px!important;
+          font-size: 24px;
+          line-height: 30px;
+        }
+      }
+      .swiper-button-prev {
+        left: 29px!important;
+      }
+      .swiper-button-next {
+        right: 29px!important;
+      }
+    }
+  }
+  .chessboard.community .chessboard__row {
+    margin-bottom: 60px!important;
+    .details {
+      margin-top: -229px;
+    }    
+  }  
+  .chessboard .chessboard__row .details a {
+    margin-top: 40px;
+  }
+}

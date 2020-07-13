@@ -7,7 +7,8 @@ gsap.registerPlugin(ScrollToPlugin);
 
 export default class Card {
     constructor() {
-        this.mySwiper;        
+        this.mySwiper;
+        this.mySwiper2;
     }
     init() {
         this.slider();
@@ -20,16 +21,25 @@ export default class Card {
     };    
 
     slider() {
-        this.mySwiper = new Swiper ('.swiper-container', {
+        this.mySwiper = new Swiper ('.slider.card .swiper-container', {
             // Optional parameters
             //direction: 'vertical',
             loop: false,
             speed: 800,
             autoHeight: true,
-            slidesPerView: 3,
+            slidesPerView: 1,
             //slidesPerGroup: 2,
-            spaceBetween: 80,
+            spaceBetween: 40,
             slideVisibleClass: 'swiper-slide-visible',
+
+            breakpoints: {
+            // when window width is >= 320px                
+                576: {
+                    slidesPerView: 3,            
+                    spaceBetween: 80,
+                    
+                }
+            },
         
             // If we need pagination
             pagination: {
@@ -42,6 +52,23 @@ export default class Card {
                 prevEl: '.swiper-button-prev',
             }            
         })
+        this.mySwiper2 = new Swiper ('.card-photo-slider.swiper-container', {
+            // Optional parameters
+            //direction: 'vertical',
+            loop: false,
+            speed: 800,
+            autoHeight: true,
+            slidesPerView: 1,            
+            spaceBetween: 26,
+            slideVisibleClass: 'swiper-slide-visible',
+        
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            }
+        })
+
+        
     }
 
     fixedSide() {
