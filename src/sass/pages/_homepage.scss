@@ -147,9 +147,23 @@ main.home {
       }
     }
   }
+  .chessboard.brands {
+    .chessboard__row {
+      margin-bottom: 40px;
+    }
+    .chessboard__row .background {
+      height: calc((100vw / 100) * 34)!important;
+    }
+    .chessboard__row .details {
+      margin-top: 40px;
+      h2 {
+        color: #0c0c0c;        
+      }
+    }
+  }  
 }
 
-@media screen and (max-width: 576px) {  
+@media screen and (max-width: 576px) {
   main.home .home__hero .home__hero_details {
     padding: 0 26px;
     margin-top: -174px;
@@ -215,5 +229,26 @@ main.home {
   }  
   .chessboard .chessboard__row .details a {
     margin-top: 40px;
+  }
+  .chessboard.brands {
+    margin-top: -60px!important;
+    .chessboard__row {
+      margin-bottom: 30px!important;
+    }
+    .chessboard__row .background {
+      height: calc((100vw / 100) * 34)!important;
+    }
+    .chessboard__row .details {
+      margin-top: 40px;
+      h2 {
+        color: #0c0c0c;
+        font-size: 60px;
+        line-height: 1;
+        margin-bottom: 20px!important;
+      }
+      a {
+        margin-top: 0;
+      }
+    }
   }
 }

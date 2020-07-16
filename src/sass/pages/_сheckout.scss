@@ -15,7 +15,14 @@ main.сheckout {
     }
     & > * {
       padding-right: 37px;
-      position: relative;      
+      position: relative;
+      white-space: nowrap;
+      &:last-child {
+        padding-right: 0;
+        &::after {
+          display: none;
+        }
+      }
       &::after {
         content: "→";
         font-family: $Cormorant;
@@ -237,5 +244,73 @@ main.сheckout {
     margin-top: 90px;
     text-align: center;
     margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  main.сheckout .сheckout__lookbook {
+    flex-direction: column;
+    padding: 0 40px;
+  }
+  main.сheckout .сheckout__lookbook .сheckout__lookbook_list {
+    width: 100%;
+  }
+  main.сheckout .сheckout__lookbook .сheckout__total {
+    width: 100%;
+    position: static!important;
+    margin-top: 40px!important;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  main.сheckout .сheckout__steps {
+    padding: 0 26px;
+    font-size: 12px;
+  }
+  main.сheckout .сheckout__lookbook {
+    padding: 0 26px;
+  }
+  main.сheckout .сheckout__lookbook .сheckout__lookbook_list li .photo {
+    margin-right: 16px;
+    padding-right: 4px;
+  }
+  main.сheckout .сheckout__lookbook .сheckout__lookbook_list li {
+    padding-bottom: 20px;
+  }
+  main.сheckout .сheckout__lookbook .сheckout__lookbook_list li .details h5 {    
+    margin-bottom: 16px;
+  }
+  main.сheckout .сheckout__lookbook .сheckout__lookbook_list li .photo a img {
+    transform: translate(4px, 0)!important;
+  }
+  main.сheckout .сheckout__lookbook .сheckout__lookbook_list li .photo a::before {
+    transform: translate(0, 4px)!important;
+  }
+  main.сheckout .сheckout__lookbook .сheckout__lookbook_list li .details .article {
+    margin-bottom: 16px;
+  }
+  main.сheckout .сheckout__lookbook .сheckout__lookbook_list li .size {
+    margin-bottom: 16px;
+  }
+  main.сheckout .сheckout__back {
+    margin-top: 30px;
+  }
+  main.сheckout .сheckout__lookbook .сheckout__form {
+    width: 100%;
+  }
+  main.сheckout .сheckout__lookbook .сheckout__form .form--section .form-control {
+    margin-left: 0;
+  }
+  main.сheckout .сheckout__lookbook .сheckout__form .form--section {
+    width: 100%;
+  }
+  main.сheckout .сheckout__lookbook .сheckout__form .form--section .dubble {
+    margin-left: 0;
+  }
+  main.сheckout .сheckout__lookbook .сheckout__form .form--section .dubble .form-control {
+    width: -webkit-calc(50% - 10px);
+  }
+  main.сheckout .сheckout__lookbook .сheckout__form .form--section .сheckout__radio {
+    margin-left: 0;
   }
 }

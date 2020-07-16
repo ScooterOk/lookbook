@@ -76,3 +76,34 @@ main.contacts {
     }
   }
 }
+
+
+@media screen and (max-width: 960px) {
+  main.contacts .wrapper {
+    margin: 40px auto 0 auto;
+    padding: 0 40px;
+    flex-direction: column;
+    width: auto;
+    align-items: center;
+  }
+  main.contacts .contacts__details {
+    width: auto;
+    padding-right: 0;
+  }
+  main.contacts .contacts__form {
+    margin-top: 40px;
+  }
+}
+@media screen and (max-width: 576px) {
+  main.contacts .wrapper {    
+    padding: 0 26px;    
+  }
+  main.contacts .contacts__details {
+    width: auto;
+    padding-right: 0;
+  }
+  main.contacts .contacts__form {
+    margin-top: 0px;
+    width: 100%;
+  }
+}

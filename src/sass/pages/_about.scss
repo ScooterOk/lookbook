@@ -67,3 +67,70 @@ main.about {
     margin-top: 180px;
   }
 }
+
+@media screen and (max-width: 960px) {
+  main.about .about__hero img {
+    height: 45vw;
+  }
+  main.about .about__article {
+    padding: 0 40px;
+  }
+  main.about .about__article .about__article_arrow {
+    width: auto;
+    padding-right: 0;
+  }
+  main.about .about__article .about__article_arrow::after {
+    left: calc(50% - 3px);
+  }
+  main.about .about__article .about__article_dubble {
+    flex-direction: column;
+  }
+  main.about .about__article .about__article_dubble .photo {
+    width: 100%;
+  }
+  main.about .about__article .about__article_dubble .photo img {
+    height: calc((50vw / 100) * 125);
+  }
+  main.about .about__article .about__article_dubble .text {
+    width: auto;
+    margin-top: 40px;
+    padding-right: 0;
+  }
+  main.about .chessboard.community {
+    margin-top: 60px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  main.about .about__hero {
+    margin-top: 30px;
+  }
+  main.about .about__hero img {
+    height: 55vw;
+  }
+  main.about .about__article {
+    margin-top: 30px;
+    padding-left: 26px;
+    padding-right: 26px;
+  }
+  main.about .about__article .about__article_dubble .photo img {
+    width: 75%;
+    height: calc((75vw / 100) * 125);
+  }
+  main.about .about__article .about__article_dubble .photo::before {
+    width: 80%;
+    left: -26px;
+  }
+  main.about .about__article .about__article_arrow::after {
+    bottom: -45px;
+  }
+  main.about .about__article .about__article_arrow {
+    margin-bottom: 0px;
+    font-size: 18px;
+    line-height: 30px;
+  }
+  main.about .about__article .about__article_dubble .text {
+    font-size: 18px;
+    line-height: 30px;
+  }
+}

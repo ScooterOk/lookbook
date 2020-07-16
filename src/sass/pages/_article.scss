@@ -97,3 +97,74 @@ main.article {
     margin-top: 250px;
   }
 }
+
+@media screen and (max-width: 960px) {
+  main.article .article__title {
+    width: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  main.article .article__photo {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+  main.article .article__body {
+    width: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  main.article .article__title {
+    padding-left: 26px;
+    padding-right: 26px;
+    font-size: 36px;
+    line-height: 1;
+  }
+  main.article .article__date {
+    margin-top: 15px;
+  }
+  main.article .article__photo {
+    margin: 20px 0 0 0;
+    img {
+      height: calc(((100vw - 130px) / 100) * 85);
+    }
+  }
+  main.article .article__body {
+    margin-top: 30px;
+    padding-left: 26px;
+    padding-right: 26px;
+    font-size: 18px;
+    line-height: 30px;
+    h2 {
+      font-size: 30px;
+      line-height: 1;
+      margin: 0;
+    }
+    h3 {
+      font-size: 24px;
+      line-height: 30px;
+      margin: 0;
+    }
+    h4 {
+      font-size: 20px;
+      line-height: 26px;
+      margin: 0;
+    }
+  }
+  main.article .slider {
+    margin-top: 90px;
+  }
+  main.article .slider .swiper-container {
+    margin-top: 30px;
+  }
+  main.article {
+    .slider .swiper-container .swiper-slide time {
+      margin-top: 40px;
+    }
+    .slider .swiper-container .swiper-slide h4 {
+      margin-top: 10px!important;
+    }
+  }  
+}

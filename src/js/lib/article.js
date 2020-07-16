@@ -10,10 +10,19 @@ export default class Article {
             loop: false,
             speed: 800,
             autoHeight: true,
-            slidesPerView: 2,
+            slidesPerView: 1,
             //slidesPerGroup: 2,
             spaceBetween: 60,
             slideVisibleClass: 'swiper-slide-visible',
+
+            breakpoints: {
+            // when window width is >= 320px                
+                960: {
+                    slidesPerView: 2,
+                    spaceBetween: 60,
+                    
+                }
+            },
         
             // If we need pagination
             pagination: {

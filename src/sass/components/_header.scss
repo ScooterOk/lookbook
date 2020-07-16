@@ -723,6 +723,7 @@ header {
             border: none;
             flex-direction: column;
             padding: 0 25px;
+            flex-wrap: nowrap;
             li {
               margin: 0;              
               font-size: 14px;

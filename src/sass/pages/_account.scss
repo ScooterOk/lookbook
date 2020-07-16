@@ -309,3 +309,67 @@ main.account {
     margin-top: 20px;
   }
 }
+
+@media screen and (max-width: 960px) {
+  main.account {
+    .catalog__list {
+      margin-top: 0;
+    }
+  }
+  main.account .account__orders {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+  main.account .account__orders table tbody tr.view td.action {
+    padding-right: 0;
+    width: 70px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  main.account .account__nav {
+    a {
+      margin: 0 10px;
+    }
+  }
+  main.account .catalog__list {
+    margin-top: 30px;
+  }
+  main.account .account__form {
+    padding: 0 26px;
+    margin-top: 10px;
+  }
+  main.account h3.address--title {
+    margin-top: 30px;
+  }
+  main.account .address__list {
+    flex-direction: column;
+    margin-top: 0;
+  }
+  main.account .address__list section {
+    margin-top: 40px;
+  }
+  main.account .account__orders {
+    margin-left: 26px;
+    margin-right: 26px;
+  }
+  main.account .account__orders table tr.view td.date,
+  main.account .account__orders table thead th.date,
+  main.account .account__orders table tr.view td.price,
+  main.account .account__orders table thead th.price {
+    display: none;
+  }
+  main.account .account__orders table tbody tr.view td.status {
+    width: 36%;
+  }
+  main.account .account__orders table tbody tr.fold td:first-child {
+    display: none;
+  }
+  main.account .tabs {
+    width: auto;
+  }
+  .tabs .tabs__nav {
+    margin-left: 26px;
+    margin-right: 26px;
+  }
+}
