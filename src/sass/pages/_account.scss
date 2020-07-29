@@ -19,6 +19,7 @@ main.account {
       display: inline-flex;
       align-items: center;
       position: relative;
+      white-space: nowrap;
       &.current {
         pointer-events: none;
         &::after {
@@ -151,6 +152,9 @@ main.account {
           text-align: left;
           border-bottom: 1px solid #e7e7e7;
           text-transform: uppercase;
+          &.date {
+            padding-left: 20px;
+          }
           &:last-child {
             text-align: right;
           }
@@ -160,6 +164,11 @@ main.account {
         tr {
           &.view {
             font: 300 18px/30px $Futura;
+            transition: background-color 800ms ease;
+            cursor: pointer;
+            &:hover {
+              background-color: #f6f6f6;
+            }
             &.visible {
               td {
                 border-color: #141414;
@@ -184,7 +193,7 @@ main.account {
               white-space: nowrap;
               &.date {
                 width: 15%;
-                
+                padding-left: 20px;                
               }
               &.price {
                 width: 15%;

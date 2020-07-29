@@ -14,12 +14,130 @@ main.catalog {
   padding: 0 70px;
   margin-right: -60px;
   overflow: hidden;
+  .card.dubble {
+    width: calc(33.33333% - 60px);
+    margin: 0 60px 50px 0;
+    padding-right: 20px;    
+    &:hover {
+      .card--photo {
+        transform: scale(1.1);
+        a {
+          img {
+            width: 90%;
+            transform: translate(5%, 24px)!important;
+            opacity: 0;
+            &.hover {
+              width: 100%;
+              transform: translate(0, 0)!important;
+              opacity: 1!important;
+            }
+          }
+          &::before {
+            width: 90%;
+            transform: translate(5%, 24px);
+          }
+        }
+      }
+    }
+    .card--photo {
+      transition: transform 800ms ease;
+      a:not(.product--delete) {
+        display: block;
+        width: 100%;
+        padding-top: 119%;
+        position: relative;        
+        &::before {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;          
+          transform: translate(0px, 20px);
+          background-color: #000;          
+          transition: transform 700ms ease, width 700ms ease;          
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          object-fit: cover;
+          transition: all 800ms ease;
+          backface-visibility: hidden;
+          transform: translate(20px, 0)!important;
+          &.hover {
+            transform: translate(0px, 20px)!important;
+            opacity: 0;
+          }
+        }
+      }
+    }
+    h5 {
+      margin-top: 40px;
+      font-family: $Cormorant;
+      font-size: 18px;
+      line-height: 24px;
+      color: #292828;
+      margin-left: -14px;
+      position: relative;
+      padding-right: 15px;
+      .favorites {
+        position: absolute;
+        top: -3px;
+        right: -15px;
+        width: 30px;
+        height: 30px;
+        &.active {
+          img {
+            opacity: 0;
+            &.hover {
+              opacity: 1;
+            }
+          }
+        }
+        &:hover {
+          img {
+            opacity: 0;
+            &.hover {
+              opacity: 1;
+            }
+          }
+        }
+        img {
+          width: 16px;
+          height: 14px;
+          position: absolute;
+          top: 50%;
+          left: 50%;    
+          transform: translate(-50%, -50%);
+          transition: opacity 400ms ease;        
+          &.hover {
+            opacity: 0;
+          }
+        }
+      }
+    }
+    .card--price {
+      margin-left: -14px;
+      font-family: $Futura;
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      margin-top: 12px;
+    }
+  }
   .card {
     width: calc(33.33333% - 60px);
     margin: 0 60px 50px 0;
     padding-right: 20px;
     &:hover {
       .card--photo {
+        .product--delete {
+          transform: translateX(-15px);
+        }
         a {
           img {
             transform: translate(0, 0)!important;  
@@ -32,6 +150,40 @@ main.catalog {
       }
     }
     .card--photo {
+      position: relative;
+      .product--delete {
+        width: 30px!important;
+        height: 30px!important;
+        padding: 0;        
+        border: 1px solid #dadada;
+        background-color: #fff;
+        border-radius: 50%;
+        position: absolute;
+        top: 15px;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 800ms ease;
+        &:hover {
+          background-color: #141414;
+          border-color: #fff;
+          &::before {
+            color: #fff;
+          }
+        }
+        &::before {
+          content: "\2715";
+          width: auto!important;
+          height: auto!important;
+          position: static!important;
+          background-color: transparent;
+          font-size: 14px;
+          color: #141414;
+          transition: color 400ms ease;
+          transform: translate(0, 0)!important;
+        }
+      }
       a {
         display: block;
         width: 100%;

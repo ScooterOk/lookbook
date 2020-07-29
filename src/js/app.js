@@ -62,14 +62,19 @@ function appInit() {
     app.mode = 'descktop';
   }
 
+  const vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+
   window.addEventListener('resize', function(e){    
-    setTimeout(function(){      
+    setTimeout(function(){
       if(window.innerWidth <= 1024) {
         app.mode = 'mobile';
       }
       if(window.innerWidth > 1024) {
         app.mode = 'descktop';
       }
+      const h = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${h}px`);
     }, 100);
   });    
   window.addEventListener('orientationchange', function(e){

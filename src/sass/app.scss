@@ -460,6 +460,14 @@ a {
       opacity: 0;
       padding: 0 64px;
       will-change: transform;
+      &:hover {
+        .slide__photo a img {
+          transform: translate(-10px, 10px)!important;
+          &:last-child {
+            transform: translate(-10px, 10px)!important;
+          }
+        }
+      }
       &.swiper-slide-active {
         padding: 0 0 0 128px;
         opacity: 1;

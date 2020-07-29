@@ -652,7 +652,7 @@ header {
   header {
     height: 80px!important;
     &.open {
-      height: 100vh!important;
+      height: calc(var(--vh, 1vh) * 100)!important;
       &.opened {
         overflow: auto;
         .header__nav {

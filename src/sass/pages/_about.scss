@@ -20,13 +20,17 @@ main.about {
       color: #141414;
       position: relative;
       margin-bottom: 70px;
-      &::after {
-        content: "←";
-        font: 300 30px/30px $Cormorant;
+      .arrow {
         position: absolute;
         left: -10px;
         bottom: -77px;
-        transform: rotate(-90deg);
+        transform: rotate(-90deg);        
+        &::after {
+          content: "←";
+          font: 300 30px/30px $Cormorant;
+          display: block;
+          animation: scrollDown 2s infinite ease;
+        }
       }
     }
     .about__article_dubble {
@@ -132,5 +136,21 @@ main.about {
   main.about .about__article .about__article_dubble .text {
     font-size: 18px;
     line-height: 30px;
+  }
+}
+
+
+@keyframes scrollDown {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(0%);
+    opacity: 1;
+  }  
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
   }
 }
